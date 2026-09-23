@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Making heavy GIS layers light enough for the web — Elias Matar</title>
+<meta name="description" content="GIS data optimisation and web publishing for a habitat-categorisation map around Al Ula, Saudi Arabia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../index.html#top">Elias Matar</a>
+    <nav>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#certs">Training</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="project-page">
+    <div class="wrap">
+      <a class="back-link reveal" href="../index.html#work">&larr; Back to work</a>
+
+      <article class="project reveal" style="border-top:0;padding-top:0">
+        <div>
+          <p class="project__index">04 / GIS data optimisation · web publishing</p>
+          <h3>Making heavy GIS layers light enough for the web</h3>
+        </div>
+        <div class="project__body">
+          <p>Also for the Lebanon Reforestation Initiative, on a habitat-categorisation project
+            for protected areas around Al&nbsp;Ula, Saudi Arabia. The classified habitat layers
+            &mdash; red sandstone buttes, lava fields, arid thorn woodlands, wadis and colluvial
+            fans, and more, grouped into three categories &mdash; were far too heavy to share
+            online, the largest running to several gigabytes.</p>
+          <p>I cleaned the geometry in ArcGIS with <strong>Dissolve</strong> and
+            <strong>Aggregate Polygons</strong>, merging thousands of tiny fragments and closing
+            spurious gaps, which cut the files from gigabytes to megabytes with no meaningful loss
+            of detail. I exported the result to KML and published it as an interactive map anyone
+            can pan, zoom and click.</p>
+          <ul class="tags">
+            <li>Dissolve &amp; Aggregate Polygons</li><li>Cartographic generalisation</li>
+            <li>KML export</li><li>ArcGIS</li><li>Web map publishing</li>
+          </ul>
+        </div>
+        <figure class="mapframe">
+          <iframe src="https://www.google.com/maps/d/embed?mid=19TQKFEXBNpl3dPKSPWk141f-qr_l0oc"
+            title="Interactive habitat-categorisation map for protected areas around Al Ula, Saudi Arabia" loading="lazy"></iframe>
+          <figcaption>Habitat categorisation for protected areas around Al&nbsp;Ula, Saudi Arabia &mdash;
+            layers I optimised in ArcGIS, published to Google&nbsp;My&nbsp;Maps (map by J.&nbsp;Bechara, used with permission).</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="f-name">Elias Matar &mdash; Greater Toronto Area</span>
+    <span class="f-links">
+      <a href="mailto:eliasmatar@outlook.com">eliasmatar@outlook.com</a>
+      <a href="https://www.linkedin.com/in/eliasmmatar">linkedin.com/in/eliasmmatar</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
