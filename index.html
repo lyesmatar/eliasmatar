@@ -8,370 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
-<style>
-  /* ---------- tokens : light (bare :root = the "system" default) ---------- */
-  :root{
-    --paper:#F3F4F0;
-    --surface:#FBFBF8;
-    --surface-sunk:#EEEFE9;
-    --ink:#17241F;
-    --ink-soft:#57635C;
-    --ink-faint:#8A948C;
-    --line:#E0DED1;
-    --line-soft:#EAE9DE;
-    --pine:#0E5B4E;
-    --pine-deep:#0A463C;
-    --clay:#B4552F;           /* signal only: live / in-progress */
-    --shadow:18px 18px 48px -24px rgba(23,36,31,.28);
-    --maxw:1120px;
-    --textw:720px;
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --paper:#0F1613;
-      --surface:#161F1B;
-      --surface-sunk:#111815;
-      --ink:#ECEFE8;
-      --ink-soft:#9BA79E;
-      --ink-faint:#6C7A72;
-      --line:#293831;
-      --line-soft:#1F2A25;
-      --pine:#57C6AC;
-      --pine-deep:#7CD9C1;
-      --clay:#E27B53;
-      --shadow:18px 18px 52px -24px rgba(0,0,0,.55);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#0F1613;
-    --surface:#161F1B;
-    --surface-sunk:#111815;
-    --ink:#ECEFE8;
-    --ink-soft:#9BA79E;
-    --ink-faint:#6C7A72;
-    --line:#293831;
-    --line-soft:#1F2A25;
-    --pine:#57C6AC;
-    --pine-deep:#7CD9C1;
-    --clay:#E27B53;
-    --shadow:18px 18px 52px -24px rgba(0,0,0,.55);
-  }
-
-  /* ---------- reset / base ---------- */
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-weight:400;
-    font-size:1.0625rem;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  h1,h2,h3{
-    font-family:"Fraunces","Iowan Old Style",Georgia,serif;
-    font-weight:500;
-    line-height:1.12;
-    letter-spacing:-.012em;
-    text-wrap:balance;
-    margin:0;
-  }
-  p{margin:0}
-  img{max-width:100%;display:block}
-  a{color:var(--pine-deep);text-decoration-thickness:1px;text-underline-offset:2px}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--pine);outline-offset:3px;border-radius:2px}
-
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  .eyebrow{
-    font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    font-size:.72rem;
-    font-weight:500;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--pine);
-  }
-
-  /* ---------- header ---------- */
-  header{
-    position:sticky;top:0;z-index:20;
-    background:color-mix(in srgb,var(--paper) 86%,transparent);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line-soft);
-  }
-  header .wrap{display:flex;align-items:baseline;justify-content:space-between;padding-block:11px}
-  .brand{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:600;font-size:1.06rem;letter-spacing:-.01em;
-    color:var(--ink);text-decoration:none;
-  }
-  header nav{display:flex;gap:26px}
-  header nav a{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--ink-soft);text-decoration:none;
-  }
-  header nav a:hover{color:var(--pine-deep)}
-  header nav a.active{color:var(--pine-deep)}
-  header nav a.active::after{content:"";display:block;height:1px;background:var(--pine);margin-top:3px}
-  @media (max-width:640px){header nav{display:none}}
-
-  /* ---------- hero ---------- */
-  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)}
-  .hero .topo{
-    position:absolute;inset:-10% -5% auto -5%;width:110%;height:150%;
-    color:var(--pine);opacity:.10;pointer-events:none;
-  }
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero .topo{opacity:.14}}
-  :root[data-theme="dark"] .hero .topo{opacity:.14}
-  .hero .wrap{position:relative;padding-block:36px 34px}
-  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center}
-  @media (max-width:880px){.hero-grid{grid-template-columns:1fr;gap:28px}}
-  .hero h1{
-    font-size:clamp(2.6rem,6.4vw,4.75rem);
-    font-weight:500;letter-spacing:-.028em;
-    margin:.06em 0 0;line-height:1.02;
-  }
-  .hero .tagline{
-    margin-top:.7rem;font-size:clamp(1.1rem,2.4vw,1.4rem);
-    font-weight:500;color:var(--ink);max-width:26ch;
-    font-family:"Fraunces",Georgia,serif;letter-spacing:-.01em;
-  }
-  .hero .lede{
-    margin-top:.7rem;max-width:50ch;
-    font-size:1.08rem;line-height:1.5;color:var(--ink-soft);
-    font-weight:400;
-  }
-  .hero .facts{
-    margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:8px 10px;
-    font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--ink-faint);
-    letter-spacing:.02em;
-  }
-  .hero .facts span{white-space:nowrap}
-  .hero .facts span+span::before{content:"·";margin-right:10px;color:var(--line)}
-  .cta{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:12px}
-  .cta a{
-    display:inline-flex;align-items:center;gap:.5em;
-    padding:11px 20px;border-radius:2px;
-    font-size:.9rem;font-weight:500;text-decoration:none;
-    font-family:"IBM Plex Sans",sans-serif;
-  }
-  .cta .solid{background:var(--pine);color:#FBFBF8}
-  .cta .solid:hover{background:var(--pine-deep)}
-  .cta .outline{border:1px solid var(--line);color:var(--ink)}
-  .cta .outline:hover{border-color:var(--pine);color:var(--pine-deep)}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cta .solid{color:#0F1613}}
-  :root[data-theme="dark"] .cta .solid{color:#0F1613}
-
-  /* hero — a loose stack of map prints */
-  .photostack{
-    position:relative;display:block;
-    width:100%;height:clamp(320px,38vw,430px);
-    transition:transform .3s ease;
-  }
-  .photostack:hover{transform:translateY(-3px)}
-  .photostack img{
-    position:absolute;display:block;object-fit:cover;
-    border:7px solid #fff;border-radius:2px;background:#fff;
-    box-shadow:0 14px 34px -10px rgba(23,36,31,.42);
-    transition:transform .35s cubic-bezier(.2,.7,.2,1);
-  }
-  .photostack .p1{width:42%;aspect-ratio:3/4;  left:5%; top:7%;  transform:rotate(-9deg); z-index:1}
-  .photostack .p2{width:40%;aspect-ratio:3/4;  left:40%;top:1%;  transform:rotate(7deg);  z-index:2}
-  .photostack .p3{width:55%;aspect-ratio:4/3;  left:2%; top:41%; transform:rotate(3deg);  z-index:3}
-  .photostack .p4{width:50%;aspect-ratio:4/3;  left:35%;top:35%; transform:rotate(-6deg); z-index:4}
-  .photostack .p5{width:53%;aspect-ratio:4/3;  left:17%;top:19%; transform:rotate(5deg);  z-index:5}
-  @media (prefers-reduced-motion:no-preference){
-    .photostack:hover .p1{transform:rotate(-13deg) translate(-5%,1%)}
-    .photostack:hover .p2{transform:rotate(11deg) translate(5%,-2%)}
-    .photostack:hover .p4{transform:rotate(-9deg) translate(-2%,3%)}
-    .photostack:hover .p5{transform:rotate(2deg) translateY(-4%)}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .photostack,.photostack img{transition:none}
-    .photostack:hover{transform:none}
-  }
-  @media (max-width:880px){.photostack{height:clamp(320px,72vw,420px);max-width:460px;margin-inline:auto}}
-
-  .scroll-cue-wrap{text-align:center;margin-top:24px}
-  .scroll-cue{
-    display:inline-flex;flex-direction:column;align-items:center;gap:9px;
-    text-decoration:none;color:var(--ink-soft);
-    font-family:"IBM Plex Mono",monospace;font-size:.72rem;
-    letter-spacing:.16em;text-transform:uppercase;
-  }
-  .scroll-cue:hover{color:var(--pine-deep)}
-  .scroll-cue svg{width:24px;height:24px;color:var(--pine);animation:bob 1.9s ease-in-out infinite}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-  @media (prefers-reduced-motion:reduce){.scroll-cue svg{animation:none}}
-
-  /* click-to-zoom lightbox for work images */
-  .gallery img,.project__cols .gallery img{cursor:zoom-in}
-  .lightbox{
-    position:fixed;inset:0;z-index:100;
-    background:color-mix(in srgb,var(--ink) 90%,#000);
-    display:flex;align-items:center;justify-content:center;
-    padding:clamp(14px,4vw,56px);cursor:zoom-out;
-  }
-  .lightbox[hidden]{display:none}
-  .lightbox img{
-    max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
-    border-radius:3px;background:#fff;box-shadow:0 24px 70px -14px rgba(0,0,0,.6);cursor:default;
-  }
-  .lightbox__close{
-    position:absolute;top:16px;right:22px;
-    background:none;border:0;color:#fff;font-size:2rem;line-height:1;cursor:pointer;
-  }
-  @media (prefers-reduced-motion:no-preference){.lightbox{animation:lbfade .16s ease}}
-  @keyframes lbfade{from{opacity:0}to{opacity:1}}
-
-  /* ---------- sections ---------- */
-  section{padding-block:88px;scroll-margin-top:76px}
-  section+section{border-top:1px solid var(--line-soft)}
-  .section-head{margin-bottom:52px;max-width:var(--textw)}
-  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.3rem);margin-top:.35em}
-  .section-head p{margin-top:.8rem;color:var(--ink-soft)}
-
-  /* ---------- projects ---------- */
-  .project{
-    display:grid;gap:26px;
-    padding-block:44px;
-    border-top:1px solid var(--line);
-  }
-  .project:first-of-type{border-top:0;padding-top:0}
-  .project__index{
-    font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.1em;
-    color:var(--ink-faint);
-  }
-  .project h3{font-size:clamp(1.35rem,2.8vw,1.72rem);margin:.15em 0 .1em}
-  .project__body{max-width:var(--textw);display:flex;flex-direction:column;gap:.9rem;color:var(--ink-soft)}
-  .project__body strong{color:var(--ink);font-weight:600}
-  /* text + a single map side by side */
-  .project__cols{display:grid;grid-template-columns:1fr minmax(300px,360px);gap:40px;align-items:start}
-  .project__cols .project__body{max-width:none}
-  .project__cols .gallery{margin-top:0}
-  @media (max-width:760px){.project__cols{grid-template-columns:1fr;gap:24px}}
-
-  .tags{margin:.4rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
-  .tags li{
-    font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.02em;
-    color:var(--ink-soft);
-    background:var(--surface-sunk);
-    border:1px solid var(--line-soft);
-    border-radius:2px;padding:3px 9px;
-  }
-
-  .links{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:20px}
-  .links a.subtle{color:var(--ink-faint);font-size:.74rem;font-weight:400;border-bottom-color:transparent}
-  .links a.subtle:hover{color:var(--pine-deep)}
-  .links a.subtle::after{content:""}
-  .links a{
-    font-family:"IBM Plex Mono",monospace;font-size:.8rem;font-weight:500;
-    text-decoration:none;color:var(--pine-deep);
-    border-bottom:1px solid color-mix(in srgb,var(--pine) 40%,transparent);
-    padding-bottom:2px;
-  }
-  .links a:hover{border-bottom-color:var(--pine)}
-  .links a::after{content:" →"}
-
-  .gallery{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));
-    gap:16px;margin-top:6px;align-items:start;
-  }
-  .gallery figure{
-    margin:0;background:var(--surface);
-    border:1px solid var(--line);border-radius:3px;overflow:hidden;
-    transition:transform .25s ease,box-shadow .25s ease;
-  }
-  .gallery figure:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-  .gallery img{width:100%;height:auto;display:block;background:#fff;border-bottom:1px solid var(--line-soft)}
-  /* maps: show the whole frame, don't crop */
-  .gallery--maps img{padding:6px}
-  .gallery figcaption{
-    padding:11px 13px;font-size:.82rem;line-height:1.45;color:var(--ink-soft);
-  }
-  @media (prefers-reduced-motion:reduce){.gallery figure{transition:none}}
-
-  /* embedded interactive map */
-  .mapframe{
-    border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--surface);
-  }
-  .mapframe iframe{display:block;width:100%;height:clamp(360px,58vh,520px);border:0}
-  .mapframe figcaption{padding:11px 13px;font-size:.82rem;color:var(--ink-soft)}
-
-  /* ---------- skills ---------- */
-  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:36px 32px}
-  .cols h3{
-    font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:500;
-    letter-spacing:.1em;text-transform:uppercase;color:var(--pine);
-    padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:14px;
-  }
-  .cols ul{margin:0;padding:0;list-style:none;font-size:.96rem}
-  .cols li{padding:5px 0;color:var(--ink-soft)}
-
-  /* ---------- certifications ---------- */
-  .certs{list-style:none;margin:0;padding:0;max-width:var(--textw)}
-  .certs li{
-    display:flex;justify-content:space-between;gap:20px;align-items:baseline;
-    padding:15px 0;border-bottom:1px solid var(--line);
-  }
-  .certs li:last-child{border-bottom:0}
-  .certs .c-name{color:var(--ink);font-weight:500}
-  .certs .c-org{color:var(--ink-soft);font-size:.92rem}
-  .certs .c-year{
-    font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-faint);
-    flex-shrink:0;font-variant-numeric:tabular-nums;
-  }
-
-  /* ---------- about ---------- */
-  .about p{max-width:60ch;color:var(--ink-soft);font-size:1.08rem;line-height:1.7}
-
-  /* ---------- footer ---------- */
-  footer{padding-block:64px;border-top:1px solid var(--line-soft);background:var(--surface-sunk);scroll-margin-top:76px}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:baseline}
-  footer .f-name{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--ink)}
-  footer a{
-    font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--ink-soft);
-    text-decoration:none;margin-left:18px;
-  }
-  footer a:first-of-type{margin-left:0}
-  footer a:hover{color:var(--pine-deep)}
-  footer .f-links{display:flex;flex-wrap:wrap;gap:0 4px}
-
-  /* ---------- editor notes (provisional — delete when resolved) ---------- */
-  .note{
-    max-width:var(--textw);
-    margin-top:.4rem;
-    display:flex;gap:12px;
-    padding:11px 14px;
-    background:color-mix(in srgb,var(--clay) 8%,var(--surface));
-    border:1px solid color-mix(in srgb,var(--clay) 28%,transparent);
-    border-left:3px solid var(--clay);
-    border-radius:2px;
-    font-size:.86rem;line-height:1.5;color:var(--ink-soft);
-  }
-  .note::before{
-    content:"EDIT";flex-shrink:0;
-    font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:500;
-    letter-spacing:.1em;color:var(--clay);padding-top:.15em;
-  }
-  .note code{
-    font-family:"IBM Plex Mono",monospace;font-size:.85em;
-    background:var(--surface-sunk);padding:1px 4px;border-radius:2px;
-  }
-
-  /* ---------- scroll reveal (additive; no-JS shows everything) ---------- */
-  .js .reveal{opacity:0;transform:translateY(14px)}
-  .js .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
-  @media (prefers-reduced-motion:reduce){
-    .js .reveal{opacity:1;transform:none}
-    .js .reveal.in{transition:none}
-  }
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <script>document.documentElement.classList.add('js');</script>
@@ -449,192 +86,67 @@
       <div class="section-head reveal">
         <p class="eyebrow">Selected work</p>
         <h2>From national-scale modelling to field surveys</h2>
-        <p>Climate and crop modelling, freshwater ecosystem assessment, habitat suitability mapping, GIS data optimisation, and applied spatial analysis.</p>
+        <p>Climate and crop modelling, freshwater ecosystem assessment, habitat suitability mapping, GIS data optimisation, and applied spatial analysis. Click a project for the full write-up.</p>
       </div>
 
-      <!-- PROJECT 1 -->
-      <article class="project reveal">
-        <div>
-          <p class="project__index">01 / MSc thesis · climate &amp; crop modelling</p>
-          <h3>Climate change impacts on agricultural systems in Lebanon</h3>
-        </div>
-        <div class="project__cols">
-          <div class="project__body">
-            <p>I assessed how a hotter, drier climate would affect wheat &mdash; the country&rsquo;s
-              main cereal crop, about two-thirds of cultivated cereals &mdash; through the rest of
-              the century. I processed downscaled regional climate projections (EURO-CORDEX) for
-              two emission scenarios (RCP&nbsp;4.5 and 8.5) and two future periods (2046&ndash;2065
-              and 2081&ndash;2100) against a 1986&ndash;2005 baseline, then used the FAO AquaCrop
-              model to simulate rainfed and irrigated wheat yield and water productivity for every
-              agro-homogeneous zone in Lebanon, and mapped the results.</p>
-            <p>Projections showed rainfall falling <strong>8&ndash;30%</strong> and temperatures
-              rising <strong>2&ndash;4.7&nbsp;&deg;C</strong>. Yield effects varied sharply by
-              region &mdash; gains in Mount Lebanon and the South, losses elsewhere, near crop
-              failure in Baalbek-Hermel. That regional split is the core finding: adaptation has to
-              be planned locally, not nationally.</p>
-            <ul class="tags">
-              <li>ArcGIS Pro</li><li>QGIS</li><li>FAO AquaCrop</li>
-              <li>EURO-CORDEX / NetCDF</li><li>Spatial analysis</li><li>Scientific writing</li>
-            </ul>
-          </div>
-          <div class="gallery gallery--maps">
-            <figure>
-              <img src="assets/thesis-yield-change.png" alt="Four maps of projected irrigated wheat yield change across Lebanon, RCP4.5 and RCP8.5, mid- and end-century">
-              <figcaption>Projected change in irrigated wheat yield (t&nbsp;ha&#8315;&sup1;) &mdash; two scenarios, two periods. Full set of maps in the thesis.</figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="links">
-          <a href="assets/Elias_Matar_MSc_Thesis.pdf">Read the thesis (PDF)</a>
-        </div>
-      </article>
+      <div class="work-grid">
 
-      <!-- PROJECT 2 -->
-      <article class="project reveal">
-        <div>
-          <p class="project__index">02 / NYGEP · freshwater ecosystems · field &amp; desk research</p>
-          <h3>The Wild Dives &mdash; freshwater ecosystem assessment, Ontario provincial parks</h3>
-        </div>
-        <div class="project__cols">
-          <div class="project__body">
-            <p>A team project through TRCA&rsquo;s NYGEP co-op (2025) assessing under-documented
-              freshwater ecosystems across Algonquin Provincial Park, Kawartha Highlands Provincial
-              Park and the Queen Elizabeth II Wildlands.</p>
-            <p>I coordinated the biomonitoring proposal for the Kawartha Lakes region &mdash;
-              selecting the study area and delivering the scope, expected outcomes, targets and
-              budget on a tight deadline &mdash; then compiled the Kawartha field report and wrote
-              the Algonquin section of the freshwater literature review, synthesising ecological
-              values, conservation efforts and anthropogenic pressures from published sources. The
-              wider project also produced reusable monitoring protocols and GIS maps of
-              invasive-species cover and priority management areas.</p>
-            <ul class="tags">
-              <li>Project coordination</li><li>Study design &amp; scoping</li>
-              <li>Literature review &amp; synthesis</li><li>Technical reporting</li>
-              <li>Freshwater ecology</li><li>ArcGIS</li>
-            </ul>
+        <a class="work-card reveal" href="work/thesis.html">
+          <div class="thumb"><img src="assets/thesis-yield-change.png" alt="" loading="lazy"></div>
+          <div class="work-card__body">
+            <p class="project__index">01 / MSc thesis · climate &amp; crop modelling</p>
+            <h3>Climate change impacts on agricultural systems in Lebanon</h3>
+            <p>EURO-CORDEX climate projections + FAO AquaCrop, mapping wheat-yield change across Lebanon under RCP 4.5 and 8.5.</p>
+            <span class="card-arrow">Read the project</span>
           </div>
-          <div class="gallery gallery--maps">
-            <figure>
-              <img src="assets/nygep-sucker-lake.png" alt="Map of the Sucker Lake monitoring area and lake buffer zone, Kawartha Highlands">
-              <figcaption>Sucker Lake monitoring area and buffer zone &mdash; Kawartha Highlands field site.</figcaption>
-            </figure>
+        </a>
+
+        <a class="work-card reveal" href="work/nygep.html">
+          <div class="thumb"><img src="assets/nygep-sucker-lake.png" alt="" loading="lazy"></div>
+          <div class="work-card__body">
+            <p class="project__index">02 / NYGEP · freshwater ecosystems</p>
+            <h3>The Wild Dives &mdash; freshwater ecosystem assessment</h3>
+            <p>Coordinated a biomonitoring proposal and field report across Algonquin, Kawartha Highlands and the QEII Wildlands.</p>
+            <span class="card-arrow">Read the project</span>
           </div>
-        </div>
-        <div class="links">
-          <a href="assets/NYGEP_Kawartha_Park_Report.pdf">Kawartha field report (PDF)</a>
-          <a class="subtle" href="assets/NYGEP_Algonquin_Report_EM.pdf">+ Algonquin report (my sections)</a>
-        </div>
-      </article>
+        </a>
 
-      <!-- PROJECT 3 -->
-      <article class="project reveal">
-        <div>
-          <p class="project__index">03 / Lebanon Reforestation Initiative · habitat suitability · Python</p>
-          <h3>One map for choosing which native trees to plant where</h3>
-        </div>
-        <div class="project__cols">
-          <div class="project__body">
-            <p>The Lebanon Reforestation Initiative needed a single national map to guide species
-              choice at planting sites. I integrated two datasets: the Important Plant Areas grid
-              (observed species richness and endemism on a 3&nbsp;&times;&nbsp;3&nbsp;km grid) and
-              MaxEnt species-distribution models for <strong>27 native tree species</strong> &mdash;
-              models driven by elevation, moisture, solar radiation, bioclimate, precipitation and
-              distance from the sea.</p>
-            <p>Working in ArcGIS with an <strong>arcpy (Python) script</strong>, I thresholded each
-              species&rsquo; occurrence probability, converted the rasters to polygons, unioned them
-              onto the grid, and computed the mean occurrence per cell &mdash; producing a
-              &ldquo;species count&rdquo; layer: how many of the 27 species are likely to thrive in
-              each cell. A correlation check against observed richness (Pearson&nbsp;r&nbsp;=&nbsp;0.4)
-              confirmed the integrated approach held together.</p>
-            <p>One of several GIS deliverables from a six-month reforestation internship with LRI
-              (2024&ndash;25) &mdash; alongside the Al&nbsp;Ula habitat map below and a
-              post-conflict soil-contamination model for South Lebanon.</p>
-            <ul class="tags">
-              <li>arcpy / Python</li><li>MaxEnt / species distribution</li>
-              <li>Raster &amp; vector geoprocessing</li><li>Data integration</li>
-              <li>ArcGIS</li><li>Cartography</li>
-            </ul>
+        <a class="work-card reveal" href="work/lri-habitat.html">
+          <div class="thumb"><img src="assets/lri-species-suitability.jpg" alt="" loading="lazy"></div>
+          <div class="work-card__body">
+            <p class="project__index">03 / Lebanon Reforestation Initiative · Python</p>
+            <h3>One map for choosing which native trees to plant where</h3>
+            <p>MaxEnt species-distribution models for 27 native tree species, integrated with an arcpy script into a single suitability layer.</p>
+            <span class="card-arrow">Read the project</span>
           </div>
-          <div class="gallery gallery--maps">
-            <figure>
-              <img src="assets/lri-species-suitability.jpg" alt="Habitat suitability map of Lebanon showing the number of suitable tree species per 3km grid cell">
-              <figcaption>Suitable native tree species per grid cell (0 to 21&ndash;24), integrating MaxEnt models with the Important Plant Areas grid.</figcaption>
-            </figure>
+        </a>
+
+        <a class="work-card work-card--noimg reveal" href="work/al-ula-map.html">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z"/>
+              <path d="M9 3v15M15 6v15"/>
+            </svg>
           </div>
-        </div>
-        <div class="links">
-          <a href="assets/LRI_Common_Species_Report.pdf">Method &amp; results report (PDF)</a>
-        </div>
-      </article>
+          <div class="work-card__body">
+            <p class="project__index">04 / GIS data optimisation · web publishing</p>
+            <h3>Making heavy GIS layers light enough for the web</h3>
+            <p>Cut a habitat-categorisation dataset for Al Ula, Saudi Arabia, from gigabytes to megabytes and published it as an interactive map.</p>
+            <span class="card-arrow">Read the project</span>
+          </div>
+        </a>
 
-      <!-- PROJECT 4 -->
-      <article class="project reveal">
-        <div>
-          <p class="project__index">04 / GIS data optimisation · web publishing</p>
-          <h3>Making heavy GIS layers light enough for the web</h3>
-        </div>
-        <div class="project__body">
-          <p>Also for the Lebanon Reforestation Initiative, on a habitat-categorisation project
-            for protected areas around Al&nbsp;Ula, Saudi Arabia. The classified habitat layers
-            &mdash; red sandstone buttes, lava fields, arid thorn woodlands, wadis and colluvial
-            fans, and more, grouped into three categories &mdash; were far too heavy to share
-            online, the largest running to several gigabytes.</p>
-          <p>I cleaned the geometry in ArcGIS with <strong>Dissolve</strong> and
-            <strong>Aggregate Polygons</strong>, merging thousands of tiny fragments and closing
-            spurious gaps, which cut the files from gigabytes to megabytes with no meaningful loss
-            of detail. I exported the result to KML and published it as an interactive map anyone
-            can pan, zoom and click.</p>
-          <ul class="tags">
-            <li>Dissolve &amp; Aggregate Polygons</li><li>Cartographic generalisation</li>
-            <li>KML export</li><li>ArcGIS</li><li>Web map publishing</li>
-          </ul>
-        </div>
-        <figure class="mapframe">
-          <iframe src="https://www.google.com/maps/d/embed?mid=19TQKFEXBNpl3dPKSPWk141f-qr_l0oc"
-            title="Interactive habitat-categorisation map for protected areas around Al Ula, Saudi Arabia" loading="lazy"></iframe>
-          <figcaption>Habitat categorisation for protected areas around Al&nbsp;Ula, Saudi Arabia &mdash;
-            layers I optimised in ArcGIS, published to Google&nbsp;My&nbsp;Maps (map by J.&nbsp;Bechara, used with permission).</figcaption>
-        </figure>
-      </article>
+        <a class="work-card reveal" href="work/esri-spatial-analysis.html">
+          <div class="thumb"><img src="assets/gis-stream-trace.png" alt="" loading="lazy"></div>
+          <div class="work-card__body">
+            <p class="project__index">05 / Esri &ldquo;Going Places with Spatial Analysis&rdquo;</p>
+            <h3>Spatial analysis &mdash; suitability, hydrology and pattern detection</h3>
+            <p>MOOC coursework: a cougar-habitat suitability Story Map, downstream tracing, and a repeatable hot-spot detection model.</p>
+            <span class="card-arrow">Read the project</span>
+          </div>
+        </a>
 
-      <!-- PROJECT 5 -->
-      <article class="project reveal">
-        <div>
-          <p class="project__index">05 / Esri &ldquo;Going Places with Spatial Analysis&rdquo;</p>
-          <h3>Spatial analysis &mdash; suitability, hydrology and pattern detection</h3>
-        </div>
-        <div class="project__body">
-          <p>Maps and analysis workflows I built during Esri&rsquo;s spatial-analysis course. The
-            capstone is a cougar-habitat suitability analysis presented as a Story Map: it compares
-            potential habitat under a narrower (state-parks) and a broader (wildlife-agency) set of
-            criteria and highlights where likely habitat overlaps with areas of probable
-            human&ndash;wildlife interaction, so managers can prioritise field verification.</p>
-          <p>Other exercises cover downstream tracing and watershed overlay, and hot-spot / outlier
-            detection built as a repeatable model.</p>
-          <ul class="tags">
-            <li>ArcGIS Online</li><li>Suitability / overlay</li><li>Hydrologic tracing</li>
-            <li>Hot-spot &amp; outlier detection</li><li>ModelBuilder</li><li>Story Maps</li><li>Cartography</li>
-          </ul>
-        </div>
-        <div class="gallery gallery--maps">
-          <figure>
-            <img src="assets/gis-stream-trace.png" alt="Downstream trace and stream summary over watershed boundaries">
-            <figcaption>Cougar-habitat capstone &mdash; downstream trace and stream summary against hydrologic units and grazing allotments.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/gis-model-builder.png" alt="ArcGIS model: overlay, density, hot spots and outliers">
-            <figcaption>Repeatable model: overlay &rarr; density &rarr; hot-spot &amp; outlier detection.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/gis-dc-wards.png" alt="Ward-level quantitative map">
-            <figcaption>Quantitative mapping &mdash; distribution by administrative unit.</figcaption>
-          </figure>
-        </div>
-        <div class="links">
-          <a href="assets/Cougar_Habitat_Analysis_StoryMap.pdf">Cougar Story Map (PDF)</a>
-        </div>
-      </article>
-
+      </div>
     </div>
   </section>
 
@@ -663,7 +175,7 @@
             <li>Species distribution models (MaxEnt)</li>
             <li>Crop modelling (FAO AquaCrop)</li>
             <li>Climate data (EURO-CORDEX, NetCDF)</li>
-            <li>R &mdash; in progress</li>
+            <li>R &mdash; started learning, still building fluency</li>
             <li>Excel, data cleaning &amp; analysis</li>
           </ul>
         </div>
@@ -765,18 +277,8 @@
   </div>
 </footer>
 
+<script src="assets/site.js"></script>
 <script>
-  (function(){
-    var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
-      });
-    },{rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){io.observe(e);});
-  })();
-
   /* nav scroll-spy — highlights the section you're looking at */
   (function(){
     var links = Array.prototype.slice.call(document.querySelectorAll('header nav a'));
@@ -796,37 +298,6 @@
       if(current && map[current]) map[current].classList.add('active');
     },{rootMargin:'-45% 0px -50% 0px'});
     ids.forEach(function(id){io.observe(document.getElementById(id));});
-  })();
-
-  /* click-to-zoom lightbox for work images */
-  (function(){
-    var box = document.createElement('div');
-    box.className = 'lightbox';
-    box.hidden = true;
-    box.setAttribute('role','dialog');
-    box.setAttribute('aria-label','Enlarged image');
-    box.innerHTML = '<button class="lightbox__close" aria-label="Close (Esc)">×</button><img alt="">';
-    document.body.appendChild(box);
-    var bimg = box.querySelector('img');
-    function open(src, alt){
-      bimg.src = src; bimg.alt = alt || '';
-      box.hidden = false;
-      document.documentElement.style.overflow = 'hidden';
-    }
-    function close(){
-      box.hidden = true; bimg.src = '';
-      document.documentElement.style.overflow = '';
-    }
-    document.querySelectorAll('.gallery img').forEach(function(im){
-      im.addEventListener('click', function(){ open(im.currentSrc || im.src, im.alt); });
-    });
-    box.addEventListener('click', function(e){
-      if(e.target === bimg) return;   /* clicks on the image itself don't close */
-      close();
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && !box.hidden) close();
-    });
   })();
 </script>
 
