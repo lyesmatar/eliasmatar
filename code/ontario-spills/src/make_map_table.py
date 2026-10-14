@@ -42,10 +42,13 @@ def main() -> None:
     df["watershed_quaternary"] = df["watershed_quaternary"].str.split(";")
     df = df.explode("watershed_quaternary")
 
-    # "02HC-03 | West Humber River" -> code "02HC-03", name "West Humber River"
-    parts = df["watershed_quaternary"].str.extract(r"(\d{2}[A-Z]{2}-\d{2})\s*(?:\|\s*(.*))?")
+    # "02HC-03 | West Humber River" -> code "02HC-03", name "West Humber River".
+    # Codes come in two forms, "02HC-03" and "02GHA02" (also "029C-02"), so take
+    # whatever is before the "|" rather than assuming one pattern.
+    parts = df["watershed_quaternary"].str.extract(r"^\s*([0-9A-Z]{4}-\d{2}|[0-9A-Z]{7})\s*(?:\|\s*(.*))?")
     df["quat_code"] = parts[0]
     df["quat_name"] = parts[1].str.strip()
+    print(f"Watershed entries without a readable code: {df['quat_code'].isna().sum()}")
     df = df.dropna(subset=["quat_code"])
 
     df["sewage_to_water"] = ((df.contaminant_group == "Sewage") & (df.to_water == 1)).astype(int)
