@@ -13,7 +13,7 @@ Toronto Pearson Airport.
 ## Key findings
 
 1. **Rain makes a spill more likely to reach water, and the effect grows with the rain.**
-   Of 38,633 GTA spills, 24% reached water on dry days, 26% on light-rain days, 30% on
+   Of 38,681 GTA spills, 24% reached water on dry days, 26% on light-rain days, 30% on
    moderate-rain days and **40% on heavy-rain days (25+ mm)**, 1.7 times the dry-day share
    (95% CI 1.52–1.88). For the *same substance*, gasoline, diesel, hydraulic oil and other oils
    were about **1.3 times as likely** to reach water on wet days (10+ mm), with all intervals above 1.
@@ -59,6 +59,9 @@ Run everything: `pip install -r requirements.txt`, then `python run_all.py`.
 - Conservation authority and watershed fields only exist from 2023.
 
 ## Data
+Full citations, download links and file checksums: [data/SOURCES.md](data/SOURCES.md).
+All results tables: [data/tables/](data/tables/).
+
 - Ontario Ministry of the Environment, Conservation and Parks, *Environmental Occurrences and
   Spills* (Open Government Licence – Ontario).
 - Environment and Climate Change Canada, daily climate data, Toronto Pearson (stations 6158733 / 6158731).
