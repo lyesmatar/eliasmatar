@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontario spills and rain — Elias Matar</title>
+<meta name="description" content="Python and SQL analysis of 146,000 reports to Ontario's Spills Action Centre (2003–2025), linked to Environment Canada rainfall.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../index.html">Elias Matar</a>
+    <nav>
+      <a href="../work.html" class="active">Work</a>
+      <a href="../skills.html">Skills</a>
+      <a href="../training.html">Training</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="project-page">
+    <div class="wrap">
+      <a class="back-link reveal" href="../work.html">&larr; Back to work</a>
+
+      <article class="project reveal" style="border-top:0;padding-top:0">
+        <div>
+          <p class="project__index">06 / Personal project · Python · SQL · open data · October 2026</p>
+          <h3>When it rains, spills reach water more often</h3>
+        </div>
+        <div class="project__body">
+          <p>Ontario&rsquo;s Spills Action Centre publishes every spill reported to it. I built a
+            Python pipeline that downloads <strong>23 years of reports (146,413, from 2003 to 2025)</strong>,
+            cleans and merges them into one SQLite database, and answers questions with SQL: what is
+            spilled, why, and where it ends up. The files were messy: four files, three layouts,
+            three date formats and two text encodings, with free-text substance names that had to be
+            grouped.</p>
+          <p>I then linked GTA spills to daily rainfall at Toronto Pearson from Environment Canada&rsquo;s
+            open-data API. <strong>On dry days, 24% of spills reached water. On days with 25&nbsp;mm or
+            more of rain, 40% did</strong>, and the share rises step by step with the rain. Comparing
+            the same substance, gasoline, diesel and oil spills were about <strong>1.3 times as likely</strong>
+            to reach water on wet days. Sewage and coolant spills didn&rsquo;t change.</p>
+          <p>For response, that means a fuel or oil spill during rain leaves less time before it is
+            in a creek. The next step is to estimate that time directly, using creek-flow data to
+            see how fast a spill would travel downstream at normal flow and at storm flow.</p>
+          <ul class="tags">
+            <li>Python / pandas</li><li>SQL / SQLite</li><li>Data cleaning</li>
+            <li>REST API</li><li>Statistics</li><li>matplotlib</li>
+          </ul>
+        </div>
+
+        <div class="gallery">
+          <figure style="grid-column:1/-1">
+            <img src="../assets/spills-rain-impact.png" alt="Bar charts: share of GTA spills reaching water rises from 24% on dry days to 40% on heavy-rain days; fuel and oil spills are more likely to reach water on wet days">
+            <figcaption>Share of GTA spills that reached water, by rain that day (left) and for the same substance on dry vs wet days (right). 38,681 spills, 2003&ndash;2025.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/spills-substances.png" alt="Horizontal bar chart of the share of spills reaching water by substance, from sediment at 84% to natural gas near 0%">
+            <figcaption>What reaches water depends on the substance: sediment, chlorinated water and sewage usually do; natural gas, the most-reported substance, almost never does.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/spills-conservation-authorities.png" alt="Bar chart of spills by conservation authority area, 2023 to 2025, with Toronto and Region highest at 24%">
+            <figcaption>The Toronto and Region (TRCA) area had 24% of Ontario&rsquo;s spill reports in 2023&ndash;2025, three times the next area.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/spills-weather-month.png" alt="Bar chart of weather-caused spills by month, peaking in April and July">
+            <figcaption>Spills caused by weather peak in April (spring melt and rain) and July (summer storms).</figcaption>
+          </figure>
+        </div>
+
+        <div class="project__body">
+          <p><strong>Limits.</strong> One rain gauge stands in for the whole GTA, report dates are not
+            always spill dates, and the result is an association, not proof of cause. Comparing the
+            same substance helps, but doesn&rsquo;t rule out other differences between rainy-day and
+            dry-day spills. Reporting practices also changed over the 23 years.</p>
+        </div>
+
+        <div class="links">
+          <a href="https://github.com/lyesmatar/eliasmatar/tree/main/code/ontario-spills">Code and full write-up on GitHub</a>
+          <a href="https://data.ontario.ca/dataset/environmental-occurrences-and-spills">Source data (Ontario Data Catalogue)</a>
+        </div>
+        <p class="project__index" style="margin-top:.4rem">Built with Claude (Anthropic) as a coding assistant. I chose the question and the data, checked the cleaning and the results, and wrote the conclusions.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="f-name">Elias Matar &mdash; Greater Toronto Area</span>
+    <span class="f-links">
+      <a href="mailto:eliasmatar@outlook.com">eliasmatar@outlook.com</a>
+      <a href="https://www.linkedin.com/in/eliasmmatar">linkedin.com/in/eliasmmatar</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
