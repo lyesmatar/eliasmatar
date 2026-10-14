@@ -49,9 +49,20 @@ exactly as produced by `src/run_analysis.py`, `src/rain_and_spills.py` and
 
 ## 4. Watershed boundaries (for the map)
 
-**Ontario Ministry of Natural Resources. (n.d.).** *Ontario Watershed Boundaries (OWB)*
-[Data set]. Ontario GeoHub. Open Government Licence – Ontario.
+**Ontario Ministry of Natural Resources. (2026).** *Ontario Watershed Boundaries (OWB) – Main,
+All Watershed Units* [Data set]. Land Information Ontario. Open Government Licence – Ontario.
 https://geohub.lio.gov.on.ca/datasets/mnrf::ontario-watershed-boundaries-owb
+
+Map service used by `src/make_map.py` (downloaded 2026-10-13):
+https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open04/MapServer/27
+Outlines are simplified to 100 m for drawing; rates use the official `AREA_HECTARE` field.
+
+The separate quaternary layer (MapServer/1) leaves out the Lake Ontario shoreline strips, so the
+"All Watershed Units" layer is used and dissolved to quaternary codes. About 7% of 2023–2025
+reports (1,374) list a quaternary code that is not in the current boundary layer (e.g. 02HC-09)
+and are not mapped; they are listed in `tables/watershed_map_join_check.csv`.
+
+*Contains information licensed under the Open Government Licence – Ontario.*
 
 ## Method reference
 
