@@ -2,3 +2,5 @@ pandas
 matplotlib
 openpyxl
 requests
+geopandas
+matplotlib-scalebar

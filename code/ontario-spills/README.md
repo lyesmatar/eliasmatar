@@ -25,8 +25,12 @@ Toronto Pearson Airport.
    (36,753 reports), almost never does.
 3. **The Toronto and Region (TRCA) area accounts for about 24% of all Ontario spill reports**
    (5,015 of 21,223 in 2023–2025), more than three times the next conservation authority area (Grand River).
-4. **Weather-caused spills peak in April and July:** spring melt and rain, and summer storms.
+4. **Per area, the Don River watershed has the most spill reports in Ontario** (352 per 100 km² in
+   2023–2025), followed by the lower Humber, Etobicoke Creek and the Rouge, all in Toronto.
+5. **Weather-caused spills peak in April and July:** spring melt and rain, and summer storms.
    Sewage spills caused by weather follow the same pattern.
+
+![Spill reports per 100 km2 by watershed](../../assets/spills-watershed-map.png)
 
 ![Share reaching water by substance](../../assets/spills-substances.png)
 
@@ -38,6 +42,7 @@ Toronto Pearson Airport.
 | 3 | `src/get_weather.py` | ECCC open-data API; joins two Pearson station IDs into one record |
 | 4 | `sql/analysis_queries.sql` + `src/run_analysis.py` | SQL queries (aggregation, filtering, subqueries) run from Python; tables and charts |
 | 5 | `src/rain_and_spills.py` | Join of spills to weather by date; risk ratios with 95% confidence intervals |
+| 6 | `src/make_map_table.py` + `src/make_map.py` | Spills per watershed joined to the provincial watershed boundaries (geopandas); map of spills per 100 km² |
 
 ## Next step: how fast does a spill travel when it rains?
 The SAC open data has no containment or response times, so this dataset can't say how fast spills
