@@ -53,7 +53,7 @@
             see how fast a spill would travel downstream at normal flow and at storm flow.</p>
           <ul class="tags">
             <li>Python / pandas</li><li>SQL / SQLite</li><li>Data cleaning</li>
-            <li>REST API</li><li>Statistics</li><li>matplotlib</li>
+            <li>REST API</li><li>Statistics</li><li>matplotlib</li><li>geopandas / mapping</li>
           </ul>
         </div>
 
@@ -77,6 +77,21 @@
         </div>
 
         <div class="project__body">
+          <p><strong>Where the reports are.</strong> Since 2023 each report names its watershed. I joined
+            the counts to the Province&rsquo;s watershed boundaries and divided by area, because a big
+            watershed collects more reports just by being big. Per square kilometre, the
+            <strong>Don River watershed has the most spill reports in Ontario</strong> (352 per 100&nbsp;km&sup2;),
+            followed by the lower Humber, Etobicoke Creek and the Rouge, all in Toronto.</p>
+        </div>
+
+        <div class="gallery">
+          <figure style="grid-column:1/-1">
+            <img src="../assets/spills-watershed-map.png" alt="Map of southern Ontario watersheds shaded by spill reports per 100 square kilometres, darkest in Toronto, with a Greater Toronto Area close-up showing the Don, Humber, Etobicoke and Rouge watersheds above 150 reports per 100 square kilometres">
+            <figcaption>Spill reports per 100&nbsp;km&sup2; by quaternary watershed, 2023&ndash;2025, made in Python (geopandas). About 7% of reports list an older watershed code that isn&rsquo;t in the current boundary layer and aren&rsquo;t mapped.</figcaption>
+          </figure>
+        </div>
+
+        <div class="project__body">
           <p><strong>Limits.</strong> One rain gauge stands in for the whole GTA, report dates are not
             always spill dates, and the result is an association, not proof of cause. Comparing the
             same substance helps, but doesn&rsquo;t rule out other differences between rainy-day and
@@ -91,6 +106,9 @@
           <p>Environment and Climate Change Canada. (2026). <em>Daily climate observations, Toronto Pearson
             International Airport</em> (Climate IDs 6158733 and 6158731) [Data set]. Open Government Licence &ndash; Canada.
             <a href="https://api.weather.gc.ca/collections/climate-daily">api.weather.gc.ca/collections/climate-daily</a></p>
+          <p>Ontario Ministry of Natural Resources. (2026). <em>Ontario Watershed Boundaries (OWB)</em>
+            [Data set]. Land Information Ontario. Open Government Licence &ndash; Ontario.
+            <a href="https://geohub.lio.gov.on.ca/datasets/mnrf::ontario-watershed-boundaries-owb">geohub.lio.gov.on.ca</a></p>
           <p>Downloaded October 13, 2026. File checksums, the rainfall data and every results table are published
             with the code, so anyone can check that the data matches the official sources.</p>
         </div>
