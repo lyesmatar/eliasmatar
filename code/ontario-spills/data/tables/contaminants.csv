@@ -1,0 +1,21 @@
+contaminant_group,spills,reached_water,pct_reached_water
+Natural gas,36753,146,0.4
+Other / not stated,21241,7271,34.2
+Diesel,16068,3951,24.6
+Other oil,11945,3997,33.5
+Sewage,10797,6488,60.1
+Hydraulic oil,9805,1853,18.9
+Transformer oil,5900,684,11.6
+Heating/furnace oil,4820,827,17.2
+Refrigerant,4690,21,0.4
+Gasoline,4335,1695,39.1
+Sediment/silt,3923,3289,83.8
+Coolant/antifreeze,3813,1333,35.0
+Smoke/particulates/dust,3103,195,6.3
+Wastewater/effluent,2655,1141,43.0
+Firefighting water/foam,1808,821,45.4
+Concrete/cement/slurry,1743,658,37.8
+Other fuel,1414,331,23.4
+Chlorine/chlorinated water,769,500,65.0
+Ammonia,443,39,8.8
+Manure,388,184,47.4

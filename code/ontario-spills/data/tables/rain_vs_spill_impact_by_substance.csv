@@ -1,0 +1,7 @@
+substance,spills_dry_day,pct_water_dry,spills_wet_day,pct_water_wet,ratio,ci_low,ci_high
+Gasoline,823,37.181,61,50.82,1.367,1.051,1.777
+Other oil,2673,35.092,243,45.267,1.29,1.113,1.495
+Diesel,2866,29.867,271,39.114,1.31,1.117,1.535
+Hydraulic oil,1330,24.511,114,33.333,1.36,1.032,1.793
+Coolant/antifreeze,1237,41.148,93,40.86,0.993,0.771,1.279
+Sewage,1732,59.353,175,61.714,1.04,0.919,1.176

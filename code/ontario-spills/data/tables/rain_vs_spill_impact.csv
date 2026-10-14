@@ -1,0 +1,5 @@
+rain_class,spills,reached_water,pct_reached_water,ratio_vs_dry,ci_low,ci_high
+Dry (<0.2 mm),25293,5960,23.564,1.0,0.969,1.032
+Light (0.2-10 mm),10635,2728,25.651,1.089,1.047,1.132
+Moderate (10-25 mm),2207,671,30.403,1.29,1.207,1.38
+Heavy (25+ mm),546,217,39.744,1.687,1.518,1.875
