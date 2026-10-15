@@ -1,137 +1,931 @@
-quat_code,quat_code_nodash,quat_name,spills,reached_water,sewage_to_water,fuel_oil_to_water,pct_reached_water
-02HC-09,02HC09,,91,18,2,7,19.8
-02ED-10,02ED10,Willow Creek,79,11,0,3,13.9
-02GG-01,02GG01,,77,23,0,11,29.9
-05PB-22,05PB22,,71,3,2,0,4.2
-02GH-04,02GH04,,70,34,20,8,48.6
-02HD-04,02HD04,,47,9,2,2,19.1
-02HD-03,02HD03,,45,10,2,3,22.2
-02MC-10,02MC10,,44,7,1,4,15.9
-02HC-10,02HC10,,39,4,1,2,10.3
-02HB-07,02HB07,,37,8,3,2,21.6
-02CA-01,02CA01,,31,10,3,3,32.3
-02ED-11,02ED11,Boyne River,30,4,0,1,13.3
-02GG-07,02GG07,,28,4,0,2,14.3
-02GH-01,02GH01,,27,10,1,6,37.0
-02ED-14,02ED14,,27,4,0,1,14.8
-02DD-20,02DD20,,25,3,1,1,12.0
-02MB-05,02MB05,,25,10,0,4,40.0
-02FD-01,02FD01,,22,6,2,1,27.3
-02HD-07,02HD07,,22,8,0,5,36.4
-02HD-02,02HD02,,20,3,0,1,15.0
-02MB-04,02MB04,,19,1,0,1,5.3
-05PD-01,05PD01,,18,4,0,2,22.2
-02GC-11,02GC11,,18,4,0,2,22.2
-02ED-15,02ED15,,18,6,4,0,33.3
-02GG-05,02GG05,,17,4,1,0,23.5
-02HE-06,02HE06,,14,2,0,1,14.3
-02ED-12,02ED12,,13,10,7,0,76.9
-02ED-13,02ED13,,13,5,3,1,38.5
-02HC-12,02HC12,,13,0,0,0,0.0
-02HD-06,02HD06,,13,7,0,1,53.8
-02HD-05,02HD05,,13,1,1,0,7.7
-02HC-11,02HC11,,12,5,0,5,41.7
-02MC-09,02MC09,,11,3,2,0,27.3
-02MA-08,02MA08,,11,4,3,1,36.4
-04JD-18,04JD18,,11,1,0,0,9.1
-02HD-01,02HD01,,10,6,0,0,60.0
-02GH-08,02GH08,,10,2,1,0,20.0
-02CF-11,02CF11,,10,2,2,0,20.0
-02GC-13,02GC13,,9,1,0,1,11.1
-02GC-12,02GC12,,8,4,2,1,50.0
-02GH-09,02GH09,,8,6,5,0,75.0
-02CD-07,02CD07,,8,1,1,0,12.5
-02FD-02,02FD02,,8,5,1,0,62.5
-02EC-17,02EC17,,7,0,0,0,0.0
-02AD-01,02AD01,,7,1,0,1,14.3
-02GH-07,02GH07,,7,2,0,0,28.6
-02MB-03,02MB03,,6,1,0,0,16.7
-02BE-13,02BE13,,5,2,0,1,40.0
-05PD-07,05PD07,,5,0,0,0,0.0
-05PC-03,05PC03,,5,1,0,1,20.0
-02MB-01,02MB01,,5,1,1,0,20.0
-02GH-05,02GH05,,5,0,0,0,0.0
-02FB-07,02FB07,,5,1,0,1,20.0
-02AD-19,02AD19,,5,0,0,0,0.0
-02DD-19,02DD19,,5,2,0,1,40.0
-04LG-18,04LG18,,4,2,0,1,50.0
-02FD-06,02FD06,,4,1,0,1,25.0
-02MA-09,02MA09,,4,0,0,0,0.0
-02MC-07,02MC07,,4,2,2,0,50.0
-02MB-06,02MB06,,4,1,0,1,25.0
-04LG-14,04LG14,,4,2,0,1,50.0
-04JD-15,04JD15,,4,2,0,1,50.0
-02GF-05,02GF05,,4,0,0,0,0.0
-02FA-10,02FA10,,4,0,0,0,0.0
-04NC-10,04NC10,,3,1,0,0,33.3
-05PC-02,05PC02,,3,1,1,0,33.3
-02MC-04,02MC04,,3,3,3,0,100.0
-02CA-06,02CA06,,3,1,1,0,33.3
-02EC-19,02EC19,,3,0,0,0,0.0
-02CF-16,02CF16,,3,0,0,0,0.0
-02GG-02,02GG02,,3,2,2,0,66.7
-02AD-18,02AD18,,3,0,0,0,0.0
-02EB-15,02EB15,,3,0,0,0,0.0
-02EA-15,02EA15,,3,0,0,0,0.0
-02DD-23,02DD23,,3,0,0,0,0.0
-02MC-12,02MC12,,3,0,0,0,0.0
-02MC-06,02MC06,,3,1,1,0,33.3
-02HE-09,02HE09,,3,1,0,0,33.3
-02GH-06,02GH06,,3,2,1,1,66.7
-02AD-09,02AD09,,3,0,0,0,0.0
-02GG-06,02GG06,,2,0,0,0,0.0
-05PB-02,05PB02,,2,0,0,0,0.0
-02CA-12,02CA12,,2,0,0,0,0.0
-02BF-09,02BF09,,2,2,0,1,100.0
-04ME-01,04ME01,,2,0,0,0,0.0
-04ME-03,04ME03,,2,0,0,0,0.0
-02EA-22,02EA22,,2,0,0,0,0.0
-02GF-03,02GF03,,2,0,0,0,0.0
-02GH-02,02GH02,,2,0,0,0,0.0
-02GF-02,02GF02,,2,1,0,0,50.0
-02DD-21,02DD21,,2,0,0,0,0.0
-02CH-05,02CH05,,2,0,0,0,0.0
-02AD-21,02AD21,,2,0,0,0,0.0
-02KD-17,02KD17,,2,1,0,0,50.0
-02DD-28,02DD28,,2,1,0,0,50.0
-02FD-07,02FD07,,2,1,1,0,50.0
-02FD-03,02FD03,,2,0,0,0,0.0
-02HE-10,02HE10,,2,1,0,0,50.0
-04JD-01,04JD01,,2,1,0,1,50.0
-02FB-06,02FB06,,2,1,0,1,50.0
-02FA-11,02FA11,,2,1,1,0,50.0
-02MB-02,02MB02,,2,0,0,0,0.0
-02CA-11,02CA11,,2,1,0,1,50.0
-02HE-03,02HE03,,2,2,0,0,100.0
-02HE-05,02HE05,,2,0,0,0,0.0
-02FB-08,02FB08,,1,0,0,0,0.0
-04JD-06,04JD06,,1,0,0,0,0.0
-04JD-11,04JD11,,1,0,0,0,0.0
-04JD-12,04JD12,,1,0,0,0,0.0
-04JD-17,04JD17,,1,0,0,0,0.0
-02DD-22,02DD22,,1,0,0,0,0.0
-02EC-15,02EC15,,1,1,0,0,100.0
-02EC-18,02EC18,,1,1,0,1,100.0
-02CF-10,02CF10,,1,1,0,0,100.0
-02CG-07,02CG07,,1,0,0,0,0.0
-02GH-03,02GH03,,1,0,0,0,0.0
-02GF-06,02GF06,,1,1,0,1,100.0
-02GG-04,02GG04,,1,0,0,0,0.0
-02GC-10,02GC10,,1,0,0,0,0.0
-02AD-22,02AD22,,1,0,0,0,0.0
-02CG-12,02CG12,,1,0,0,0,0.0
-02CG-18,02CG18,,1,0,0,0,0.0
-02CH-04,02CH04,,1,1,0,0,100.0
-04LG-13,04LG13,,1,1,0,0,100.0
-02CA-04,02CA04,,1,0,0,0,0.0
-02KD-19,02KD19,,1,0,0,0,0.0
-02KD-20,02KD20,,1,0,0,0,0.0
-04LL-01,04LL01,,1,0,0,0,0.0
-02EA-19,02EA19,,1,0,0,0,0.0
-02EA-21,02EA21,,1,0,0,0,0.0
-02KA-07,02KA07,,1,0,0,0,0.0
-02KA-08,02KA08,,1,0,0,0,0.0
-02KB-13,02KB13,,1,0,0,0,0.0
-04NC-11,04NC11,,1,0,0,0,0.0
-05PB-18,05PB18,,1,0,0,0,0.0
-02KA-06,02KA06,,1,0,0,0,0.0
+quat_code,quat_code_nodash,quat_name,spills,reached_water,sewage_to_water,fuel_oil_to_water,pct_reached_water,map_code,match
+02HC-06,02HC06,Don River,1289,226,27,41,17.5,02HC-06,code and name agree
+02HC-02,02HC02,Black Creek - Humber River Outlet,878,162,22,31,18.5,02HC-02,code and name agree
+02HC-07,02HC07,Rouge River,596,114,15,31,19.1,02HC-07,code and name agree
+02HB-01,02HB01,Burlington Canal - Hamilton Harbour,593,126,25,32,21.2,02HB-01,code and name agree
+02HC-01,02HC01,Etobicoke Creek,489,94,8,24,19.2,02HC-01,code and name agree
+02GA-02,02GA02,Schneider Creek - Grand River,464,95,10,21,20.5,02GA-02,code and name agree
+02LA-01,02LA01,Rideau Falls - Rideau River,448,44,3,19,9.8,02LA-01,code and name agree
+02EC-03,02EC03,Lake Simcoe,397,80,14,22,20.2,02EC-03,code and name agree
+02HB-04,02HB04,Mary Fix Creek - Credit River,370,75,9,19,20.3,02HB-04,code and name agree
+02GA-01,02GA01,Mill Creek - Grand River,367,83,28,17,22.6,02GA-01,code and name agree
+02KF-01,02KF01,Chaudi貥 Falls - Ottawa River,362,31,4,9,8.6,02KF-01,code and name agree
+02HB-06,02HB06,Little Credit River - Credit River,343,89,12,18,25.9,02HB-06,code and name agree
+02LB-03,02LB03,Grande Presqu'Île - Ottawa River,267,32,5,9,12.0,02LB-03,code and name agree
+02HB-02,02HB02,Bronte Creek,264,65,10,14,24.6,02HB-02,code and name agree
+02HB-03,02HB03,Sixteen Mile Creek,261,50,17,20,19.2,02HB-03,code and name agree
+02HC-04,02HC04,Bolton Dam - Humber River,250,52,6,16,20.8,02HC-04,code and name agree
+02GA-09,02GA09,Ellis Creek - Speed River,232,48,9,17,20.7,02GA-09,code and name agree
+02HC-08,02HC08,Duffins Creek,194,37,4,6,19.1,02HC-08,code and name agree
+02HA-03,02HA03,Welland Canal,182,38,4,23,20.9,02HA-03,code and name agree
+02HC-03,02HC03,West Humber River,181,32,0,13,17.7,02HC-03,code and name agree
+02GD-01,02GD01,Medway Creek - North Thames River,180,24,1,10,13.3,02GD-01,code and name agree
+02GHA02,02GHA02,Turkey Creek - Detroit River,176,42,14,16,23.9,02GHA02,code and name agree
+02GA-04,02GA04,West Montrose - Grand River,170,26,7,8,15.3,02GA-04,code and name agree
+02CF-02,02CF02,McCharles Lake - Vermilion River,160,7,0,2,4.4,02CF-02,code and name agree
+02AB-01,02AB01,Current River,137,7,0,2,5.1,02AB-01,code and name agree
+02EC-14,02EC14,Holland River East Branch,131,14,2,5,10.7,02EC-14,code and name agree
+02LB-02,02LB02,Carillon Dam - Ottawa River,128,19,4,5,14.8,02LB-02,code and name agree
+02HC-05,02HC05,East Humber River,117,11,2,1,9.4,02HC-05,code and name agree
+02LA-02,02LA02,Stevens Creek - Rideau River,116,17,0,10,14.7,02LA-02,code and name agree
+02GD-03,02GD03,Waubuno Creek - Thames River,112,13,2,1,11.6,02GD-03,code and name agree
+02GGB01,02GGB01,Lake St. Clair - St. Clair River,112,17,3,13,15.2,02GGB01,code and name agree
+02HA-02,02HA02,Welland River,102,13,1,5,12.7,02HA-02,code and name agree
+02EC-08,02EC08,Talbot River - Trent-Severn Waterway,101,15,1,3,14.9,02EC-08,code and name agree
+02HA-01,02HA01,Niagara River,101,11,0,7,10.9,02HA-01,code and name agree
+02AB-02,02AB02,McIntyre River,99,16,9,1,16.2,02AB-02,code and name agree
+02MA-02,02MA02,Lake of the Isles - St. Lawrence River,99,27,7,12,27.3,02MA-02,code and name agree
+02GE-07,02GE07,Oxbow Creek - Thames River,98,13,2,2,13.3,02GE-07,code and name agree
+02CAA05,02CAA05,Sault Ste Marie - St. Marys River,97,4,1,2,4.1,02CAA05,code and name agree
+02GGA01,02GGA01,Clay Creek - St. Clair River,96,18,2,14,18.8,02GGA01,code and name agree
+02DD-05,02DD05,Lake Nipissing,94,16,5,4,17.0,02DD-05,code and name agree
+02AB-03,02AB03,Oliver Lake - Kaministiquia River,94,25,17,0,26.6,02AB-03,code and name agree
+02HC-09,02HC09,,91,18,2,7,19.8,,no name in reports
+04LA-08,04LA08,Makami River,89,8,0,6,9.0,04LA-08,code and name agree
+02GE-01,02GE01,Jeannettes Creek - Thames River Outlet,84,17,8,1,20.2,02GE-01,code and name agree
+04GF-10,04GF10,Chard River,81,19,4,7,23.5,04GF-10,code and name agree
+02GC-09,02GC09,Kettle Creek,81,14,5,1,17.3,02GC-09,code and name agree
+02MCA03,02MCA03,Lake St. Francis - St. Lawrence River,81,10,2,6,12.3,02MCA03,code and name agree
+02AB-08,02AB08,Shebandowan River,80,2,0,2,2.5,02AB-08,code and name agree
+02ED-10,02ED10,Willow Creek,79,11,0,3,13.9,02ED-08,matched by name (code changed)
+02GE-09,02GE09,Dingman Creek,79,8,1,2,10.1,02GE-09,code and name agree
+02GG-01,02GG01,,77,23,0,11,29.9,,no name in reports
+029C-02,029C02,Telegraph Narrows - Bay of Quinte,77,14,1,7,18.2,029C-02,code and name agree
+02HJ-03,02HJ03,Lock 19 - Otanabee River,76,13,1,8,17.1,02HJ-03,code and name agree
+02LA-07,02LA07,Jock River,74,11,1,6,14.9,02LA-07,code and name agree
+02FF-01,02FF01,Old Ausable Channel - Ausable River,72,13,2,6,18.1,02FF-01,code and name agree
+05PB-22,05PB22,,71,3,2,0,4.2,,no name in reports
+02GH-04,02GH04,,70,34,20,8,48.6,,no name in reports
+02GB-03,02GB03,Caledonia Dam - Grand River,70,11,2,4,15.7,02GB-03,code and name agree
+02EC-06,02EC06,Holland River,69,8,0,2,11.6,02EC-06,code and name agree
+02CF-08,02CF08,Kettle Rapids - Vermilion River,66,11,5,2,16.7,02CF-08,code and name agree
+02GE-06,02GE06,Sharon Creek - Thames River,65,4,0,1,6.2,02GE-06,code and name agree
+02GD-05,02GD05,Reynolds - Thames River,65,5,1,1,7.7,02GD-05,code and name agree
+02LB-08,02LB08,Castor River,65,4,0,1,6.2,02LB-08,code and name agree
+02EC-02,02EC02,Sparrow Lake - Severn River,61,8,1,3,13.1,02EC-02,code and name agree
+02HH-04,02HH04,Bobcaygeon River,60,4,1,2,6.7,02HH-04,code and name agree
+02CAA04,02CAA04,Lake Nicolet - St. Marys River,59,8,0,6,13.6,02CAA04,code and name agree
+02GA-05,02GA05,Charlie Creek - Nith River Outlet,59,4,0,2,6.8,02GA-05,code and name agree
+05QD-01,05QD01,,59,7,0,0,11.9,,no name in reports
+02GB-01,02GB01,Grand River Outlet,58,10,0,4,17.2,02GB-01,code and name agree
+02GD-09,02GD09,Pittock Reservoir - Thames River,58,10,7,0,17.2,02GD-09,code and name agree
+02MCA06,02MCA06,Sucker Brook - St. Lawrence River,55,9,4,2,16.4,02MCA05,matched by name (code changed)
+02HJ-01,02HJ01,Hastings Lock 18 Dam - Trent River,54,12,0,3,22.2,02HJ-01,code and name agree
+02GA-03,02GA03,Cox Creek - Grand River,54,8,0,2,14.8,02GA-03,code and name agree
+02EB-04,02EB04,Lake Muskoka - Muskoka River,53,11,3,5,20.8,02EB-04,code and name agree
+02HK-01,02HK01,Mayhew Creek - Trent River Outlet,53,19,6,7,35.8,02HK-01,code and name agree
+02ED-03,02ED03,Matchedash Bay,53,3,0,0,5.7,,name not found in boundary layer
+02GC-02,02GC02,Black Creek - Lynn River,53,21,15,4,39.6,02GC-02,code and name agree
+02GA-06,02GA06,Alder Creek - Nith River,53,6,0,1,11.3,02GA-06,code and name agree
+02HB-05,02HB05,Credit River West Branch - Credit River,52,7,3,3,13.5,02HB-05,code and name agree
+02GD-06,02GD06,Foldens Creek - Thames River,51,4,0,3,7.8,02GD-06,code and name agree
+02HJ-02,02HJ02,Otonabee River Outlet,51,3,0,1,5.9,02HJ-02,code and name agree
+04LA-01,04LA01,Sandy Falls - Mattagami River,51,8,3,4,15.7,04LA-01,code and name agree
+02GA-16,02GA16,Eramosa River,51,9,1,4,17.6,02GA-16,code and name agree
+02GB-05,02GB05,Fairchild Creek,51,8,2,2,15.7,02GB-05,code and name agree
+02CF-03,02CF03,Cascade Falls - Vermilion River,50,2,1,0,4.0,02CF-03,code and name agree
+029A-01,029A01,Jordan Harbour - Twenty Mile Creek,50,8,0,1,16.0,029A-01,code and name agree
+02HM-08,02HM08,Wilton Creek - Little Creek,50,9,2,3,18.0,02HM-08,code and name agree
+02KF-03,02KF03,Cartwrights Creek - Mississippi River,49,9,6,0,18.4,02KF-03,code and name agree
+04LA-10,04LA10,Mountjoy River,49,3,0,2,6.1,04LA-10,code and name agree
+02MA-03,02MA03,Cataraqui River,49,12,4,5,24.5,02MA-03,code and name agree
+02BF-01,02BF01,Achigan Lake - Goulais River,49,8,0,3,16.3,02BF-01,code and name agree
+02ED-05,02ED05,Bear Creek - Nottawasaga River,49,10,3,1,20.4,02ED-03,matched by name (code changed)
+02HD-04,02HD04,,47,9,2,2,19.1,,no name in reports
+02ED-09,02ED09,Mad River,47,15,12,1,31.9,02ED-07,matched by name (code changed)
+02HD-03,02HD03,,45,10,2,3,22.2,,no name in reports
+029B-02,029B02,Ganaraska River,44,17,0,10,38.6,029B-02,code and name agree
+02MC-10,02MC10,,44,7,1,4,15.9,,no name in reports
+02EB-06,02EB06,North Branch Muskoka River,44,2,1,0,4.5,02EB-06,code and name agree
+02MA-01,02MA01,Butlers Creek - St. Lawrence River,43,8,1,3,18.6,02MA-01,code and name agree
+02HH-03,02HH03,Pigeon Lake - Gannon Narrows,41,11,2,6,26.8,02HH-03,code and name agree
+02ED-08,02ED08,Innisfil Creek,41,1,0,0,2.4,02ED-06,matched by name (code changed)
+02HA-05,02HA05,,40,12,0,8,30.0,,no name in reports
+02GB-04,02GB04,Whitemans Creek,40,8,0,1,20.0,02GB-04,code and name agree
+02HC-10,02HC10,,39,4,1,2,10.3,,no name in reports
+02LB-09,02LB09,Bear Brook,39,5,0,3,12.8,02LB-09,code and name agree
+02HL-01,02HL01,Palliser Creek - Moira River Outlet,39,9,1,4,23.1,02HL-01,code and name agree
+02GGB09,02GGB09,Gold Creek - Sydenham River,39,2,1,0,5.1,02GGB09,code and name agree
+02EC-07,02EC07,Pefferlaw River,39,6,0,5,15.4,02EC-07,code and name agree
+02GE-02,02GE02,McGregor Creek -Thames River,38,2,0,1,5.3,02GE-02,code and name agree
+02GC-08,02GC08,Catfish Creek,38,4,2,2,10.5,02GC-08,code and name agree
+02HB-07,02HB07,,37,8,3,2,21.6,,no name in reports
+02HA-07,02HA07,,37,11,3,2,29.7,,no name in reports
+02HH-02,02HH02,Burleigh Falls Dam - Lower Buckhorn Lake,37,9,1,5,24.3,02HH-02,code and name agree
+02GC-06,02GC06,Little Otter Creek - Big Otter Creek,36,2,1,0,5.6,02GC-06,code and name agree
+02MA-06,02MA06,Jones Creek,35,13,0,7,37.1,02MA-06,code and name agree
+04LA-04,04LA04,Minisinakwa Lake Dam - Minisinakwa River,35,2,0,2,5.7,04LA-04,code and name agree
+02HA-06,02HA06,,35,7,1,4,20.0,,no name in reports
+05PBB17,05PBB17,Atikokan River,34,0,0,0,0.0,05PBB17,code and name agree
+02GHA03,02GHA03,Canard River,34,4,0,3,11.8,02GHA03,code and name agree
+02HM-10,02HM10,Millhaven Creek,33,11,1,4,33.3,02HM-10,code and name agree
+02ED-01,02ED01,Nottawasaga River Outlet,33,6,4,1,18.2,02ED-01,code and name agree
+02EC-01,02EC01,Little Lake - Severn River,33,6,1,3,18.2,02EC-01,code and name agree
+02GGB06,02GGB06,Nichol Creek - Bear Creek,32,4,0,0,12.5,02GGB06,code and name agree
+02KF-04,02KF04,Carleton Place Dam - Mississippi River,32,13,7,3,40.6,02KF-04,code and name agree
+02LB-07,02LB07,Chesterville Dam - South Nation River,32,3,2,1,9.4,02LB-07,code and name agree
+02CE-02,02CE02,Apsey Lake - Spanish River,31,7,0,1,22.6,02CE-02,code and name agree
+02GC-04,02GC04,Teeterville Dam - Big Creek,31,4,1,3,12.9,02GC-04,code and name agree
+02CA-01,02CA01,,31,10,3,3,32.3,,no name in reports
+02HG-01,02HG01,Lake Scugog - Scugog River,31,4,0,1,12.9,02HG-01,code and name agree
+04MD-04,04MD04,Night Hawk Lake,31,5,0,0,16.1,04MD-04,code and name agree
+04JDA03,04JDA03,Kenogamisis Lake - Kenogamisis River,30,3,0,0,10.0,04JDA03,code and name agree
+02ED-11,02ED11,Boyne River,30,4,0,1,13.3,02ED-09,matched by name (code changed)
+02ED-02,02ED02,Wye River,29,8,2,2,27.6,,name not found in boundary layer
+02MCA04,02MCA04,Lake St. Lawrence - St. Lawrence River,29,4,1,3,13.8,02MCA04,code and name agree
+02DC-01,02DC01,Muskosung Lake - Sturgeon River,29,7,5,1,24.1,02DC-01,code and name agree
+02GG-07,02GG07,,28,4,0,2,14.3,,no name in reports
+02GE-04,02GE04,Fleming Creek - Thames River,28,0,0,0,0.0,02GE-04,code and name agree
+04MD-08,04MD08,Porcupine River,28,7,1,1,25.0,04MD-08,code and name agree
+02GD-11,02GD11,Avon River,28,1,0,1,3.6,02GD-11,code and name agree
+02HL-02,02HL02,Latta Falls - Moira River,27,6,1,1,22.2,02HL-02,code and name agree
+05PE-04,05PE04,Black Sturgeon River,27,3,0,3,11.1,05PE-04,code and name agree
+02GB-02,02GB02,Holmes Creek - Grand River,27,2,0,0,7.4,02GB-02,code and name agree
+02HA-04,02HA04,,27,9,1,6,33.3,,no name in reports
+02GH-01,02GH01,,27,10,1,6,37.0,,no name in reports
+029C-01,029C01,Aldophus Reach - Bay of Quinte,27,7,0,4,25.9,029C-01,code and name agree
+02ED-14,02ED14,,27,4,0,1,14.8,,no name in reports
+02EC-10,02EC10,Black River,27,3,0,0,11.1,02EC-10,code and name agree
+02ED-06,02ED06,Pine River,26,2,1,1,7.7,02ED-04,matched by name (code changed)
+02FC-01,02FC01,Saugeen River Outlet,26,2,2,0,7.7,02FC-01,code and name agree
+02ADA01,02ADA01,Nipigon River,26,10,3,2,38.5,02ADA01,code and name agree
+02GA-12,02GA12,Bamberg Creek - Nith River,26,5,4,0,19.2,02GA-12,code and name agree
+05QD-04,05QD04,Eagle River - Wabigoon River,26,5,0,1,19.2,05QD-04,code and name agree
+02LA-03,02LA03,Burritts Rapids Dam - Rideau River,26,4,0,0,15.4,02LA-03,code and name agree
+02FE-02,02FE02,Blyth Brook - Maitland River,25,13,9,2,52.0,02FE-02,code and name agree
+02DD-20,02DD20,,25,3,1,1,12.0,,no name in reports
+05PDA01,05PDA01,Lake of the Woods,25,6,3,2,24.0,05PDA01,code and name agree
+05PBB10,05PBB10,Firesteel River,25,0,0,0,0.0,05PBB10,code and name agree
+02MB-05,02MB05,,25,10,0,4,40.0,,no name in reports
+029B-01,029B01,Bowmanville Creek,25,1,0,1,4.0,029B-01,code and name agree
+02KF-02,02KF02,Carp River,24,2,1,1,8.3,02KF-02,code and name agree
+02CF-07,02CF07,Onaping River,24,3,0,0,12.5,02CF-07,code and name agree
+02EC-09,02EC09,,24,3,1,2,12.5,,no name in reports
+02GD-08,02GD08,Middle Thames River,24,3,0,1,12.5,02GD-08,code and name agree
+02GC-01,02GC01,Nanticoke Creek,24,1,0,1,4.2,02GC-01,code and name agree
+05QC-02,05QC02,Gullrock Lake - Chukuni River,24,4,2,1,16.7,05QC-02,code and name agree
+02CD-03,02CD03,McCarthy Lake - Serpent River,24,7,5,0,29.2,02CD-03,code and name agree
+02GC-07,02GC07,Rock's Mills Dam - Big Otter Creek,23,4,0,2,17.4,02GC-07,code and name agree
+02FE-05,02FE05,Boyle Drain - Middle Maitland River,23,3,1,1,13.0,02FE-05,code and name agree
+02LA-06,02LA06,Tay River,23,6,1,3,26.1,02LA-06,code and name agree
+02AB-09,02AB09,,23,15,11,2,65.2,,no name in reports
+02FD-01,02FD01,,22,6,2,1,27.3,,no name in reports
+02FB-03,02FB03,Eugenia Lake - Beaver River,22,2,2,0,9.1,02FB-03,code and name agree
+02GD-02,02GD02,Fanshawe Lake - North Thames River,22,3,0,0,13.6,02GD-02,code and name agree
+02LB-05,02LB05,Horse Creek - South Nation River,22,4,2,2,18.2,02LB-05,code and name agree
+02HD-07,02HD07,,22,8,0,5,36.4,,no name in reports
+02EA-06,02EA06,Seguin River,22,7,4,0,31.8,02EA-06,code and name agree
+02GA-07,02GA07,Conestogo River,22,5,0,0,22.7,02GA-07,code and name agree
+02GE-08,02GE08,Baptiste Creek,22,5,1,3,22.7,02GE-08,code and name agree
+05PCD02,05PCD02,Sturgeon Creek - Rainy River,21,3,3,0,14.3,05PCD02,code and name agree
+02EB-09,02EB09,Lake Rosseau,21,3,1,1,14.3,02EB-09,code and name agree
+02EC-11,02EC11,Beaver River,20,0,0,0,0.0,02EC-11,code and name agree
+02GB-08,02GB08,Big Creek,20,1,0,0,5.0,02GB-08,code and name agree
+02LA-04,02LA04,Edmonds Dam - Rideau River,20,3,0,3,15.0,02LA-04,code and name agree
+02KB-01,02KB01,Black Bay - Petawawa River,20,5,1,4,25.0,02KB-01,code and name agree
+02HD-02,02HD02,,20,3,0,1,15.0,,no name in reports
+02LB-06,02LB06,Casselman Weir - South Nation River,19,2,1,1,10.5,02LB-06,code and name agree
+02MB-04,02MB04,,19,1,0,1,5.3,,no name in reports
+02FB-04,02FB04,Sydenham River,19,4,3,1,21.1,02FB-04,code and name agree
+05PD-01,05PD01,,18,4,0,2,22.2,,no name in reports
+02GC-11,02GC11,,18,4,0,2,22.2,,no name in reports
+02GE-05,02GE05,Newbiggen Creek - Thames River,18,1,0,0,5.6,02GE-05,code and name agree
+02FF-03,02FF03,Adelaide Creek - Ausable River,18,3,1,0,16.7,02FF-03,code and name agree
+02FF-05,02FF05,Little Ausable River - Ausable River,18,3,2,0,16.7,02FF-05,code and name agree
+02GGB11,02GGB11,Ruscom River,18,2,0,1,11.1,02GGB11,code and name agree
+02GHA01,02GHA01,Detroit River Outlet,18,2,1,1,11.1,02GHA01,code and name agree
+02ED-15,02ED15,,18,6,4,0,33.3,,no name in reports
+02KC-01,02KC01,Lac des Chats - Ottawa River,18,4,2,2,22.2,02KC-01,code and name agree
+02HM-01,02HM01,Napanee River Outlet,18,0,0,0,0.0,02HM-01,code and name agree
+02GG-05,02GG05,,17,4,1,0,23.5,,no name in reports
+02EA-14,02EA14,,17,2,1,1,11.8,,no name in reports
+02EB-13,02EB13,Hollow River,17,2,2,0,11.8,02EB-13,code and name agree
+02KC-07,02KC07,Muskrat River,17,1,0,0,5.9,02KC-07,code and name agree
+02LA-08,02LA08,Kemptville Creek,17,0,0,0,0.0,02LA-08,code and name agree
+02FC-03,02FC03,Otter Creek - Saugeen River,17,3,0,2,17.6,02FC-03,code and name agree
+02FE-01,02FE01,Maitland River Outlet,17,8,3,5,47.1,02FE-01,code and name agree
+02JE-04,02JE04,Mission Point - Lake Timiskaming - Ottawa River,16,3,1,0,18.8,02JE-04,code and name agree
+04LC-06,04LC06,Opeepeesway River,16,2,0,0,12.5,04LC-06,code and name agree
+04LGA02,04LGA02,Grand Rapids - Mattagami River,16,9,0,6,56.2,04LGA02,code and name agree
+02BD-06,02BD06,,16,2,0,1,12.5,,no name in reports
+02FC-05,02FC05,Habermehl Creek - Saugeen River,16,1,1,0,6.2,02FC-05,code and name agree
+02EB-05,02EB05,South Branch Muskoka River Outlet,16,2,0,1,12.5,02EB-05,code and name agree
+02KE-01,02KE01,Lake Madawaska - Madawaska River,16,4,2,2,25.0,02KE-01,code and name agree
+02CE-03,02CE03,Espanola Generating Station - Spanish River,16,3,0,1,18.8,02CE-03,code and name agree
+04NB-10,04NB10,Lower Detour Lake - Detour River,16,2,0,0,12.5,04NB-10,code and name agree
+02DB-02,02DB02,McVittie Dam - Wanapitei River,15,0,0,0,0.0,02DB-02,code and name agree
+02HG-02,02HG02,Mariposa Brook,15,0,0,0,0.0,02HG-02,code and name agree
+02LB-12,02LB12,Scotch River,15,1,0,1,6.7,02LB-12,code and name agree
+02FF-02,02FF02,Bayfield River,15,1,0,0,6.7,02FF-02,code and name agree
+02LB-01,02LB01,Ottawa River Outlet,15,7,4,2,46.7,02LB-01,code and name agree
+02FC-07,02FC07,Ayton Dam - South Saugeen River,15,2,1,0,13.3,02FC-07,code and name agree
+02ED-04,02ED04,Marl Creek - Nottawasaga River,15,1,0,0,6.7,02ED-02,matched by name (code changed)
+02GC-03,02GC03,Big Creek Marsh - Big Creek,14,3,0,0,21.4,02GC-03,code and name agree
+02FE-04,02FE04,Wingham - Maitland River,14,1,1,0,7.1,02FE-04,code and name agree
+02ED-07,02ED07,Nicholston Dam - Nottawasaga River,14,2,2,0,14.3,02ED-05,matched by name (code changed)
+02KC-05,02KC05,Douglas Dam - Bonnechere River,14,1,1,0,7.1,02KC-05,code and name agree
+02HM-02,02HM02,Fisher Creek - Salmon River Outlet,14,2,0,2,14.3,02HM-02,code and name agree
+02HE-06,02HE06,,14,2,0,1,14.3,,no name in reports
+05QE-01,05QE01,English River Outlet,14,8,4,2,57.1,05QE-01,code and name agree
+04LF-01,04LF01,Goose Island - Kapuskasing River,14,6,1,0,42.9,04LF-01,code and name agree
+05QA-16,05QA16,Agimak River,14,0,0,0,0.0,05QA-16,code and name agree
+02CAA10,02CAA10,Root River,14,3,2,0,21.4,02CAA10,code and name agree
+02MCA05,02MCA05,Sucker Brook - St. Lawrence River,14,2,0,2,14.3,02MCA05,code and name agree
+02HF-01,02HF01,Cameron Lake Dam - Fenelon River,14,2,0,2,14.3,02HF-01,code and name agree
+02GGB02,02GGB02,Long Creek - Sydenham River,14,2,1,0,14.3,02GGB02,code and name agree
+05QC-03,05QC03,Red Lake - Chukuni River,13,1,0,1,7.7,05QC-03,code and name agree
+05PCD04,05PCD04,Pinewood River,13,7,0,0,53.8,05PCD04,code and name agree
+04LE-02,04LE02,Chapleau River,13,7,2,0,53.8,04LE-02,code and name agree
+02ED-12,02ED12,,13,10,7,0,76.9,,no name in reports
+02ED-13,02ED13,,13,5,3,1,38.5,,no name in reports
+02ADC08,02ADC08,Blackwater River,13,0,0,0,0.0,02ADC08,code and name agree
+02JC-03,02JC03,Stuart's Rapids - Blanche River,13,7,7,0,53.8,02JC-03,code and name agree
+02KC-03,02KC03,άe aux Alumettes - Ottawa River,13,0,0,0,0.0,02KC-03,code and name agree
+02EA-12,02EA12,Stirling Creek,13,1,0,1,7.7,02EA-12,code and name agree
+02EB-14,02EB14,Tea Lake - Oxtongue River,13,1,1,0,7.7,02EB-14,code and name agree
+02GGB08,02GGB08,Warwick - Bear Creek,13,1,0,1,7.7,02GGB08,code and name agree
+02DD-08,02DD08,Bray Lake - South River,13,3,2,0,23.1,02DD-08,code and name agree
+02HL-04,02HL04,Moira Lake at Downey's Weir - Moira River,13,2,0,1,15.4,02HL-04,code and name agree
+02HC-12,02HC12,,13,0,0,0,0.0,,no name in reports
+02HA-08,02HA08,,13,3,1,1,23.1,,no name in reports
+02HD-06,02HD06,,13,7,0,1,53.8,,no name in reports
+02HD-05,02HD05,,13,1,1,0,7.7,,no name in reports
+05PE-03,05PE03,Gun Lake - Winnipeg River,12,4,1,3,33.3,05PE-03,code and name agree
+05PE-01,05PE01,Tetu Lake - Winnipeg River,12,5,1,2,41.7,05PE-01,code and name agree
+04NB-06,04NB06,,12,1,0,0,8.3,,no name in reports
+05QA-06,05QA06,Barrel Lake - English River,12,0,0,0,0.0,05QA-06,code and name agree
+02DD-06,02DD06,Veuve River,12,5,3,1,41.7,02DD-06,code and name agree
+02JD-01,02JD01,Gillies Lake - Montreal River,12,2,0,2,16.7,02JD-01,code and name agree
+02HM-11,02HM11,Collins Creek,12,0,0,0,0.0,02HM-11,code and name agree
+02JE-14,02JE14,Wabi Creek,12,1,1,0,8.3,02JE-14,code and name agree
+02LB-04,02LB04,Rigaud River,12,1,0,1,8.3,02LB-04,code and name agree
+02HK-09,02HK09,Cold Creek,12,0,0,0,0.0,02HK-09,code and name agree
+02HC-11,02HC11,,12,5,0,5,41.7,,no name in reports
+02GA-18,02GA18,Irvine Creek,12,0,0,0,0.0,02GA-18,code and name agree
+02BD-01,02BD01,Wawa Lake - Magpie River,12,3,0,2,25.0,02BD-01,code and name agree
+02GE-03,02GE03,Cornwall Creek - Thames River,12,1,0,1,8.3,02GE-03,code and name agree
+02FF-07,02FF07,Black Creek - Ausable River,12,2,2,0,16.7,02FF-07,code and name agree
+02FE-07,02FE07,Little Maitland River,12,0,0,0,0.0,02FE-07,code and name agree
+02FA-01,02FA01,Sauble River Outlet,12,2,2,0,16.7,02FA-01,code and name agree
+05QC-01,05QC01,Chukuni River Outlet,12,0,0,0,0.0,05QC-01,code and name agree
+05QA-05,05QA05,Jarvis Lake - English River,11,0,0,0,0.0,05QA-05,code and name agree
+05QB-01,05QB01,Ear Falls Dam - Lac Seul,11,4,3,1,36.4,05QB-01,code and name agree
+02DB-01,02DB01,Bird Lake - Wanapitei River,11,0,0,0,0.0,02DB-01,code and name agree
+05PDA09,05PDA09,Rushing River,11,3,0,3,27.3,05PDA09,code and name agree
+04MB-01,04MB01,Black River Outlet,11,4,2,1,36.4,04MB-01,code and name agree
+02FE-03,02FE03,Middle Maitland River Outlet,11,0,0,0,0.0,02FE-03,code and name agree
+02MCA02,02MCA02,Lake St. Francis - St. Lawrence River,11,4,1,2,36.4,02MCA02,code and name agree
+02MC-09,02MC09,,11,3,2,0,27.3,,no name in reports
+02MA-08,02MA08,,11,4,3,1,36.4,,no name in reports
+04JD-18,04JD18,,11,1,0,0,9.1,,no name in reports
+02JE-11,02JE11,Talon Lake Dam - Mattawa River,11,1,0,1,9.1,02JE-11,code and name agree
+02JE-01,02JE01,Mattawa River - Ottawa River,11,2,2,0,18.2,02JE-01,code and name agree
+05QD-06,05QD06,Wabigoon Lake - Wabigoon River,11,3,0,0,27.3,05QD-06,code and name agree
+02HM-07,02HM07,Kennebec Lake - Salmon River,11,1,0,0,9.1,02HM-07,code and name agree
+02FE-08,02FE08,Harriston - Maitland River,11,1,0,1,9.1,02FE-08,code and name agree
+02GA-10,02GA10,Conestogo Lake - Conestogo River,11,4,0,2,36.4,02GA-10,code and name agree
+02FA-02,02FA02,Tara Creek - Sauble River,10,2,1,1,20.0,02FA-02,code and name agree
+02ADA02,02ADA02,Lake Nipigon,10,1,0,1,10.0,02ADA02,code and name agree
+02CD-02,02CD02,Blind River Dam - Blind River,10,1,0,1,10.0,02CD-02,code and name agree
+02KD-02,02KD02,Kamaniskeg Lake - Madawaska River,10,1,0,1,10.0,02KD-02,code and name agree
+02DD-18,02DD18,Key River,10,4,1,1,40.0,02DD-18,code and name agree
+02HD-01,02HD01,,10,6,0,0,60.0,,no name in reports
+02CAA03,02CAA03,Lake George - St. Marys River,10,2,0,2,20.0,02CAA03,code and name agree
+02GA-17,02GA17,McNabb Drainage Works - Grand River,10,0,0,0,0.0,02GA-17,code and name agree
+02GA-15,02GA15,Four Mile Creek - Conestogo River,10,1,1,0,10.0,02GA-15,code and name agree
+02HH-07,02HH07,Omemee Dam - Pigeon River,10,0,0,0,0.0,02HH-07,code and name agree
+02KA-05,02KA05,Chalk River,10,1,0,0,10.0,02KA-05,code and name agree
+02CAA01,02CAA01,Eagle Point - St. Marys River,10,6,2,1,60.0,02CAA01,code and name agree
+02MA-05,02MA05,Wiltse Creek,10,5,0,4,50.0,02MA-05,code and name agree
+04LE-01,04LE01,,10,4,0,0,40.0,,no name in reports
+04LA-02,04LA02,Kenogamissi Lake - Mattagami Lake,10,0,0,0,0.0,04LA-02,code and name agree
+04MD-09,04MD09,Wicklow River,10,2,0,1,20.0,04MD-09,code and name agree
+02GH-08,02GH08,,10,2,1,0,20.0,,no name in reports
+02GD-04,02GD04,Otter Creek - North Thames River,10,1,0,0,10.0,02GD-04,code and name agree
+02KA-03,02KA03,Deux-Rivières Creek - Ottawa River,10,0,0,0,0.0,02KA-03,code and name agree
+02HF-03,02HF03,Coboconk Dam - Gull River,10,3,0,2,30.0,02HF-03,code and name agree
+02CH-02,02CH02,Lake Panache - Whitefish River,10,2,0,1,20.0,02CH-02,code and name agree
+02CF-11,02CF11,,10,2,2,0,20.0,,no name in reports
+02MA-04,02MA04,Gananoque River,9,1,0,1,11.1,02MA-04,code and name agree
+02ADB02,02ADB02,Wabinosh River,9,0,0,0,0.0,02ADB02,code and name agree
+02KC-04,02KC04,McCrearys Point - Bonnechere River,9,2,1,0,22.2,02KC-04,code and name agree
+02KD-01,02KD01,Racket Rapids - Madawaska River,9,4,0,0,44.4,02KD-01,code and name agree
+02GD-07,02GD07,Whirl Creek - North Thames River,9,2,1,0,22.2,02GD-07,code and name agree
+02GC-13,02GC13,,9,1,0,1,11.1,,no name in reports
+02GGB05,02GGB05,Hardy Creek - Sydenham River,9,1,0,1,11.1,02GGB05,code and name agree
+02GGB03,02GGB03,North Sydenham River,9,0,0,0,0.0,02GGB03,code and name agree
+02JC-01,02JC01,Shepherd Lake - Blanche River,9,1,0,1,11.1,02JC-01,code and name agree
+02HM-05,02HM05,Beaver Lake - Salmon River,9,1,0,1,11.1,02HM-05,code and name agree
+04MC-01,04MC01,Cyprus Creek - Abitibi River,9,4,2,1,44.4,04MC-01,code and name agree
+02EB-03,02EB03,Musquash River,9,1,1,0,11.1,02EB-03,code and name agree
+02KA-02,02KA02,Holden Lake - Ottawa River,9,1,0,0,11.1,02KA-02,code and name agree
+02DD-15,02DD15,Little Sturgeon River,9,1,0,0,11.1,02DD-15,code and name agree
+02ADC02,02ADC02,Martin Rapids - Namewaminikan River,9,0,0,0,0.0,02ADC02,code and name agree
+02GB-06,02GB06,McKenzie Creek,9,0,0,0,0.0,02GB-06,code and name agree
+02HK-08,02HK08,,9,1,0,0,11.1,,no name in reports
+02FF-04,02FF04,Nairn Creek - Ausable River,9,1,0,0,11.1,02FF-04,code and name agree
+02HM-06,02HM06,,9,2,1,1,22.2,,no name in reports
+05QD-07,05QD07,Dinorwic Lake - Wabigoon River,8,1,0,1,12.5,05QD-07,code and name agree
+02JD-08,02JD08,,8,0,0,0,0.0,,no name in reports
+05QD-09,05QD09,Back Channel - Eagle Lake,8,2,0,1,25.0,05QD-09,code and name agree
+02HG-03,02HG03,East Cross Creek,8,1,0,0,12.5,02HG-03,code and name agree
+02GC-12,02GC12,,8,4,2,1,50.0,,no name in reports
+02EB-02,02EB02,Blackstone Harbour,8,2,1,1,25.0,02EB-02,code and name agree
+02GH-09,02GH09,,8,6,5,0,75.0,,no name in reports
+02ADC01,02ADC01,Windigokan Lake - Namewaminikan River,8,0,0,0,0.0,02ADC01,code and name agree
+02EC-05,02EC05,Head River,8,1,1,0,12.5,02EC-05,code and name agree
+02FC-09,02FC09,Upper Durham Dam - Saugeen River,8,0,0,0,0.0,02FC-09,code and name agree
+04JC-13,04JC13,Jackfish River,8,0,0,0,0.0,04JC-13,code and name agree
+04JDA07,04JDA07,Making Ground River,8,1,0,0,12.5,04JDA07,code and name agree
+04LGB01,04LGB01,Little Long GS - Mattagami River,8,7,0,6,87.5,04LGB01,code and name agree
+04JDA01,04JDA01,Long Lake Diversion Dam,8,1,0,0,12.5,04JDA01,code and name agree
+02KC-02,02KC02,Lac du Rocher-Fendu - Ottawa River,8,2,1,0,25.0,02KC-02,code and name agree
+02CD-07,02CD07,,8,1,1,0,12.5,,no name in reports
+02KC-09,02KC09,Indian River,8,0,0,0,0.0,02KC-09,code and name agree
+05QD-02,05QD02,,8,1,0,0,12.5,,no name in reports
+02DD-10,02DD10,Restoule River,8,2,0,1,25.0,02DD-10,code and name agree
+02FF-06,02FF06,Moray Creek - Ausable River,8,2,1,0,25.0,02FF-06,code and name agree
+02JE-08,02JE08,Smith Lake - Amable du Fond River,8,2,0,0,25.0,02JE-08,code and name agree
+02ADB07,02ADB07,Mooseland River,8,0,0,0,0.0,02ADB07,code and name agree
+02FD-02,02FD02,,8,5,1,0,62.5,,no name in reports
+04GBA19,04GBA19,Caribou River,8,0,0,0,0.0,04GBA19,code and name agree
+02LB-13,02LB13,East Castor River,8,0,0,0,0.0,02LB-13,code and name agree
+02HK-02,02HK02,Crowe Bay Dam - Trent River,8,2,1,0,25.0,02HK-02,code and name agree
+02BD-15,02BD15,Hawk River,8,1,0,1,12.5,02BD-15,code and name agree
+02LB-10,02LB10,Chesterville Dam - South Nation River,7,1,0,0,14.3,02LB-10,code and name agree
+02ADB08,02ADB08,Pikitigushi Lake - Pikitigushi River,7,0,0,0,0.0,02ADB08,code and name agree
+02KD-03,02KD03,Halfmoon Bay - York River,7,0,0,0,0.0,02KD-03,code and name agree
+02EC-17,02EC17,,7,0,0,0,0.0,,no name in reports
+04DAA05,04DAA05,Nibinamik Lake - Winisk River,7,1,0,1,14.3,04DAA05,code and name agree
+02LB-11,02LB11,South Branch South Nation River,7,0,0,0,0.0,02LB-11,code and name agree
+02FC-08,02FC08,Greenock Creek - Teeswater River,7,1,0,1,14.3,02FC-08,code and name agree
+02CE-15,02CE15,East Spanish River,7,1,0,0,14.3,02CE-15,code and name agree
+02AD-01,02AD01,,7,1,0,1,14.3,,no name in reports
+05QA-01,05QA01,Pelican Lake - English River,7,0,0,0,0.0,05QA-01,code and name agree
+04FAA08,04FAA08,Kawinogans River Outlet,7,2,0,2,28.6,04FAA08,code and name agree
+04GBA10,04GBA10,Wapikaimaski Lake - Brightsand River,7,0,0,0,0.0,04GBA10,code and name agree
+02JE-20,02JE20,Turtle Lake - Mattawa River,7,0,0,0,0.0,02JE-20,code and name agree
+02JE-05,02JE05,Chant Plain Lake - Mattawa River,7,1,0,0,14.3,02JE-05,code and name agree
+02ADC13,02ADC13,Orient Bay - Lake Nipigon,7,1,0,1,14.3,02ADC13,code and name agree
+02HJ-06,02HJ06,Cavan Creek,7,0,0,0,0.0,02HJ-06,code and name agree
+02HK-13,02HK13,Rawdon Creek,7,0,0,0,0.0,02HK-13,code and name agree
+02HK-03,02HK03,Crowe Lake - Crowe River,7,1,1,0,14.3,02HK-03,code and name agree
+02GA-19,02GA19,Willow Brook,7,0,0,0,0.0,02GA-19,code and name agree
+02BD-18,02BD18,Goudreau Creek,7,1,0,1,14.3,02BD-18,code and name agree
+02GB-07,02GB07,Boston Creek,7,0,0,0,0.0,02GB-07,code and name agree
+02GC-05,02GC05,Big Creek Marsh - Big Creek,7,0,0,0,0.0,02GC-05,code and name agree
+02DD-14,02DD14,Wasi River,7,0,0,0,0.0,02DD-14,code and name agree
+02EB-10,02EB10,Little East River - Big East River,7,1,0,0,14.3,02EB-10,code and name agree
+02GH-07,02GH07,,7,2,0,0,28.6,,no name in reports
+02EA-10,02EA10,Ayers Lake Dam - Magnetawan River,7,4,0,1,57.1,02EA-10,code and name agree
+05QA-15,05QA15,Sturgeon Narrows - Sturgeon Lake,7,0,0,0,0.0,05QA-15,code and name agree
+02AC-02,02AC02,Shillabeer Lake - Black Sturgeon River,7,0,0,0,0.0,02AC-02,code and name agree
+02BD-05,02BD05,,7,0,0,0,0.0,,no name in reports
+02AB-05,02AB05,Adrian Lake - Matawin River,7,2,0,2,28.6,02AB-05,code and name agree
+05QB-08,05QB08,Wenasaga River Outlet,6,3,3,0,50.0,05QB-08,code and name agree
+04MB-04,04MB04,Driftwood River,6,0,0,0,0.0,04MB-04,code and name agree
+05QA-10,05QA10,MacKenzie Lake - English River,6,0,0,0,0.0,05QA-10,code and name agree
+05QA-08,05QA08,Sowden Lake - English River,6,0,0,0,0.0,05QA-08,code and name agree
+02EA-08,02EA08,Manitouwabing Lake,6,1,0,0,16.7,02EA-08,code and name agree
+04LK-09,04LK09,Lac Pivabiska,6,0,0,0,0.0,04LK-09,code and name agree
+04MC-02,04MC02,Long Sault Rapids - Abitibi River,6,4,3,1,66.7,04MC-02,code and name agree
+02CF-01,02CF01,Fairbank Lake - Vermilion River,6,1,0,0,16.7,02CF-01,code and name agree
+05QA-14,05QA14,Marchington River,6,0,0,0,0.0,05QA-14,code and name agree
+02BE-03,02BE03,Sand River,6,2,0,1,33.3,02BE-03,code and name agree
+02BE-02,02BE02,Agawa River,6,2,0,1,33.3,02BE-02,code and name agree
+02GA-14,02GA14,Smith Creek - Nith River,6,1,0,0,16.7,02GA-14,code and name agree
+02HM-04,02HM04,Colebrook Dam - Napanee River,6,1,0,1,16.7,02HM-04,code and name agree
+02JE-15,02JE15,South Wabi Creek,6,0,0,0,0.0,02JE-15,code and name agree
+02BE-05,02BE05,,6,2,0,1,33.3,,no name in reports
+02BE-04,02BE04,Old Woman River,6,2,0,1,33.3,02BE-04,code and name agree
+02KA-01,02KA01,Petawawa Point - Ottawa River,6,1,0,0,16.7,02KA-01,code and name agree
+02AB-10,02AB10,McGraw Falls Dam - Matawin River,6,0,0,0,0.0,02AB-10,code and name agree
+02JC-04,02JC04,McLeod Lake - Englehart River,6,0,0,0,0.0,02JC-04,code and name agree
+02GA-08,02GA08,Lake Belwood - Grand River,6,2,0,2,33.3,02GA-08,code and name agree
+02KB-05,02KB05,Black Bay - Barron River,6,1,0,1,16.7,02KB-05,code and name agree
+02HJ-04,02HJ04,Ouse River,6,0,0,0,0.0,02HJ-04,code and name agree
+02HF-08,02HF08,Buttermilk Falls - Halls Lake,6,3,0,0,50.0,02HF-08,code and name agree
+02HH-01,02HH01,Stony Lake - Katchewanooka Lake,6,1,0,0,16.7,02HH-01,code and name agree
+02EC-13,02EC13,Kahshe River,6,1,0,0,16.7,02EC-13,code and name agree
+02HF-07,02HF07,Drag River,6,0,0,0,0.0,02HF-07,code and name agree
+02DD-12,02DD12,South River Dam - South River,6,0,0,0,0.0,02DD-12,code and name agree
+04DAA20,04DAA20,Palanek Lake,6,1,0,1,16.7,04DAA20,code and name agree
+02MCA07,02MCA07,Rivière Delisle,6,4,4,0,66.7,02MCA07,code and name agree
+02MB-03,02MB03,,6,1,0,0,16.7,,no name in reports
+02BA-04,02BA04,Owl Lake - Aquasabon River,6,1,0,1,16.7,02BA-04,code and name agree
+02FC-02,02FC02,Vesta Creek - Saugeen River,6,1,1,0,16.7,02FC-02,code and name agree
+02FC-11,02FC11,Rocky Saugeen River,6,0,0,0,0.0,02FC-11,code and name agree
+02KC-11,02KC11,Snake River,6,3,0,0,50.0,02KC-11,code and name agree
+02EB-11,02EB11,Oxtongue River Outlet,6,0,0,0,0.0,02EB-11,code and name agree
+05QA-17,05QA17,Gulliver River,6,0,0,0,0.0,05QA-17,code and name agree
+02DC-10,02DC10,Tomiko River,5,0,0,0,0.0,02DC-10,code and name agree
+02BE-13,02BE13,,5,2,0,1,40.0,,no name in reports
+02DB-03,02DB03,Corniston Dam - Wanapitei River,5,3,3,0,60.0,02DB-03,code and name agree
+02KC-08,02KC08,Round Lake - Bonnechere River,5,0,0,0,0.0,02KC-08,code and name agree
+02GA-11,02GA11,Guelph Lake - Speed River,5,2,0,0,40.0,02GA-11,code and name agree
+02CC-02,02CC02,Tunnel Lake - Mississagi River,5,4,0,2,80.0,02CC-02,code and name agree
+02ADB17,02ADB17,Castle Creek,5,0,0,0,0.0,02ADB17,code and name agree
+02JE-09,02JE09,Pautois Creek,5,1,0,0,20.0,02JE-09,code and name agree
+02EB-08,02EB08,Lake Vernon,5,0,0,0,0.0,02EB-08,code and name agree
+02HK-10,02HK10,Percy Creek,5,0,0,0,0.0,02HK-10,code and name agree
+02EA-09,02EA09,North Magnetawan River,5,0,0,0,0.0,02EA-09,code and name agree
+04LK-08,04LK08,,5,1,0,1,20.0,,no name in reports
+02BD-07,02BD07,Steephill Dam - Magpie River,5,1,0,1,20.0,02BD-07,code and name agree
+05PD-07,05PD07,,5,0,0,0,0.0,,no name in reports
+05PC-03,05PC03,,5,1,0,1,20.0,,no name in reports
+05PBB12,05PBB12,Savanne River,5,0,0,0,0.0,05PBB12,code and name agree
+05PBB05,05PBB05,Upper Rainy Lake,5,0,0,0,0.0,05PBB05,code and name agree
+02EB-01,02EB01,Moon River Bay,5,1,0,1,20.0,02EB-01,code and name agree
+04NB-07,04NB07,Detour River Outlet,5,0,0,0,0.0,04NB-07,code and name agree
+05PAB24,05PAB24,Upper Pickerel River,5,1,0,1,20.0,05PAB24,code and name agree
+05PAB15,05PAB15,Wawiag River,5,0,0,0,0.0,05PAB15,code and name agree
+02AC-01,02AC01,Wolf River,5,0,0,0,0.0,02AC-01,code and name agree
+04LK-04,04LK04,East Mattawishkwia River - Mattawishkwia River,5,1,0,1,20.0,04LK-04,code and name agree
+02CC-01,02CC01,Basswood Lake - Mississagi River,5,0,0,0,0.0,02CC-01,code and name agree
+04MEB09,04MEB09,North Driftwood River,5,1,0,0,20.0,04MEB09,code and name agree
+04MD-02,04MD02,Carter Rapids - Frederick House River,5,2,0,0,40.0,04MD-02,code and name agree
+02FB-01,02FB01,Beaver River Outlet,5,2,1,1,40.0,02FB-01,code and name agree
+02GGB04,02GGB04,Haggerty Creek - Sydenham River,5,0,0,0,0.0,02GGB04,code and name agree
+02GD-10,02GD10,Trout Creek,5,1,0,0,20.0,02GD-10,code and name agree
+02JC-14,02JC14,Larder Lake Dam,5,2,1,0,40.0,02JC-14,code and name agree
+02DD-03,02DD03,Recollet Falls - French River,5,1,0,1,20.0,02DD-03,code and name agree
+02JD-02,02JD02,Bay Lake - Montreal River,5,0,0,0,0.0,02JD-02,code and name agree
+02FC-13,02FC13,North Saugeen River,5,0,0,0,0.0,02FC-13,code and name agree
+02EA-01,02EA01,Shawanaga River,5,1,0,0,20.0,02EA-01,code and name agree
+02HG-04,02HG04,Nonquon River,5,0,0,0,0.0,02HG-04,code and name agree
+02ADB09,02ADB09,Poshkikagan River,5,1,0,0,20.0,02ADB09,code and name agree
+02MB-01,02MB01,,5,1,1,0,20.0,,no name in reports
+04GAB02,04GAB02,Pashkokogan Lake - Pashkokogan River,5,0,0,0,0.0,04GAB02,code and name agree
+02BB-01,02BB01,Goodchild Lake - Pic River,5,3,0,2,60.0,02BB-01,code and name agree
+02GH-05,02GH05,,5,0,0,0,0.0,,no name in reports
+02BE-01,02BE01,,5,2,0,1,40.0,,no name in reports
+02HM-03,02HM03,,5,1,0,1,20.0,,no name in reports
+02FF-08,02FF08,Parkhill Creek,5,0,0,0,0.0,02FF-08,code and name agree
+04LD-01,04LD01,Groundhog River Outlet,5,1,0,0,20.0,04LD-01,code and name agree
+04LC-07,04LC07,Ivanhoe River (New Channel),5,0,0,0,0.0,04LC-07,code and name agree
+02DD-17,02DD17,Murdock River,5,2,0,1,40.0,02DD-17,code and name agree
+02BC-06,02BC06,Elora Lake - White River,5,0,0,0,0.0,02BC-06,code and name agree
+02HF-04,02HF04,Three Brothers Falls - Burnt River,5,1,0,1,20.0,02HF-04,code and name agree
+04JA-01,04JA01,Carey Creek - Kabinakagami River,5,2,0,1,40.0,04JA-01,code and name agree
+02FB-07,02FB07,,5,1,0,1,20.0,,no name in reports
+04GBA15,04GBA15,Lookout River,5,0,0,0,0.0,04GBA15,code and name agree
+02AD-19,02AD19,,5,0,0,0,0.0,,no name in reports
+02DD-19,02DD19,,5,2,0,1,40.0,,no name in reports
+02CAB01,02CAB01,Gordon Lake - Thessalon River,4,3,0,1,75.0,02CAB01,code and name agree
+05QD-11,05QD11,Canyon River,4,0,0,0,0.0,05QD-11,code and name agree
+05QD-03,05QD03,Clay Lake - Wabigoon River,4,2,0,1,50.0,05QD-03,code and name agree
+05PAB12,05PAB12,Lower Pickerel River,4,0,0,0,0.0,05PAB12,code and name agree
+05QA-09,05QA09,Singapore Lake - Sturgeon River,4,0,0,0,0.0,05QA-09,code and name agree
+02AB-11,02AB11,Upper Shebandowan Lake,4,0,0,0,0.0,02AB-11,code and name agree
+05QA-03,05QA03,English Falls - English River,4,0,0,0,0.0,05QA-03,code and name agree
+05PBB01,05PBB01,Lower Rainy Lake,4,3,0,0,75.0,05PBB01,code and name agree
+04LG-18,04LG18,,4,2,0,1,50.0,,no name in reports
+04MD-03,04MD03,Frederick House Lake - Frederick House River,4,3,0,0,75.0,04MD-03,code and name agree
+02BD-12,02BD12,Heart Lake - Dog River,4,0,0,0,0.0,02BD-12,code and name agree
+02LB-14,02LB14,Payne River,4,0,0,0,0.0,02LB-14,code and name agree
+02FD-06,02FD06,,4,1,0,1,25.0,,no name in reports
+02EC-12,02EC12,,4,1,0,1,25.0,,no name in reports
+02ADB12,02ADB12,Kenakskaniss Lake - Kopka River,4,0,0,0,0.0,02ADB12,code and name agree
+02MA-09,02MA09,,4,0,0,0,0.0,,no name in reports
+02MC-07,02MC07,,4,2,2,0,50.0,,no name in reports
+04GAA14,04GAA14,Vincent Lake - Miniss River,4,0,0,0,0.0,04GAA14,code and name agree
+02HF-05,02HF05,Minden Dam - Gull River,4,1,0,0,25.0,02HF-05,code and name agree
+04DAA19,04DAA19,Sheridan Lake,4,1,0,1,25.0,04DAA19,code and name agree
+02MB-06,02MB06,,4,1,0,1,25.0,,no name in reports
+02MCA08,02MCA08,Rivière Beaudette,4,2,1,1,50.0,02MCA08,code and name agree
+04LG-14,04LG14,,4,2,0,1,50.0,,no name in reports
+02GGB10,02GGB10,Little Bear Creek,4,2,0,1,50.0,02GGB10,code and name agree
+02FC-10,02FC10,Mount Forest Dam - South Saugeen River,4,0,0,0,0.0,02FC-10,code and name agree
+04JD-15,04JD15,,4,2,0,1,50.0,,no name in reports
+04JDB05,04JDB05,Pagwachuan River,4,0,0,0,0.0,04JDB05,code and name agree
+04KBA01,04KBA01,Moose River Outlet,4,0,0,0,0.0,04KBA01,code and name agree
+04LA-07,04LA07,Nabakwasi River,4,0,0,0,0.0,04LA-07,code and name agree
+04LA-06,04LA06,Tatachikapika River,4,0,0,0,0.0,04LA-06,code and name agree
+04LC-04,04LC04,Osishana Creek - Ivanhoe River,4,0,0,0,0.0,04LC-04,code and name agree
+04LE-04,04LE04,Nemegosenda Lake - Nemegosenda River,4,1,0,0,25.0,04LE-04,code and name agree
+02GF-05,02GF05,,4,0,0,0,0.0,,no name in reports
+02BB-10,02BB10,Agonson Lake Dam - Black River,4,1,1,0,25.0,02BB-10,code and name agree
+02FA-10,02FA10,,4,0,0,0,0.0,,no name in reports
+02FB-02,02FB02,Bighead River,4,0,0,0,0.0,02FB-02,code and name agree
+02FC-06,02FC06,Teeswater River Outlet,4,1,0,1,25.0,02FC-06,code and name agree
+02FA-03,02FA03,Rankin River,4,0,0,0,0.0,02FA-03,code and name agree
+02BB-03,02BB03,Gowan Lake - Black River,4,2,0,2,50.0,02BB-03,code and name agree
+04GAB01,04GAB01,Osnaburgh Lake - Albany River,4,2,0,2,50.0,04GAB01,code and name agree
+02EA-02,02EA02,Magnetawan River Outlet,4,1,0,0,25.0,02EA-02,code and name agree
+02HF-09,02HF09,Farquhar Lake - Irondale River,4,0,0,0,0.0,02HF-09,code and name agree
+02ADB06,02ADB06,Lee Lake - Pikitigushi River,4,0,0,0,0.0,02ADB06,code and name agree
+02KB-02,02KB02,Lake Travers Dam - Petawawa River,4,0,0,0,0.0,02KB-02,code and name agree
+02KB-04,02KB04,Catfish Lake - Petawawa River,4,0,0,0,0.0,02KB-04,code and name agree
+02KB-03,02KB03,Radiant Lake - Petawawa River,4,0,0,0,0.0,02KB-03,code and name agree
+02KB-07,02KB07,Nipissing River,4,0,0,0,0.0,02KB-07,code and name agree
+02KB-06,02KB06,Crow River,4,0,0,0,0.0,02KB-06,code and name agree
+02KB-11,02KB11,Tim River,4,0,0,0,0.0,02KB-11,code and name agree
+02KB-10,02KB10,Cauchon Creek,4,0,0,0,0.0,02KB-10,code and name agree
+02KB-12,02KB12,North River,4,0,0,0,0.0,02KB-12,code and name agree
+02LA-05,02LA05,,4,1,1,0,25.0,,no name in reports
+02KF-05,02KF05,Long Sault Creek - Mississippi River,4,2,0,1,50.0,02KF-05,code and name agree
+02KF-07,02KF07,Fall River,4,0,0,0,0.0,02KF-07,code and name agree
+02KD-05,02KD05,Galeairy Lake - Madawaska River,4,0,0,0,0.0,02KD-05,code and name agree
+02KD-06,02KD06,Opeongo River,4,1,0,1,25.0,02KD-06,code and name agree
+02EB-12,02EB12,Distress Pond - Big East River,4,1,0,1,25.0,02EB-12,code and name agree
+02CD-01,02CD01,Kecil Lake - Serpent River,4,1,0,0,25.0,02CD-01,code and name agree
+02DC-02,02DC02,Temagami River,4,2,0,2,50.0,02DC-02,code and name agree
+02HL-03,02HL03,Skootamatta River,4,2,0,0,50.0,02HL-03,code and name agree
+02KB-09,02KB09,Grand Lake Dam - Barron River,4,0,0,0,0.0,02KB-09,code and name agree
+02KB-08,02KB08,Big Trout Lake - Petawawa River,4,0,0,0,0.0,02KB-08,code and name agree
+02JE-18,02JE18,Net Creek,4,0,0,0,0.0,02JE-18,code and name agree
+02FE-09,02FE09,McEwan Creek - South Maitland River,4,2,0,0,50.0,02FE-09,code and name agree
+02KA-04,02KA04,Bissett Creek,4,0,0,0,0.0,02KA-04,code and name agree
+02JC-12,02JC12,Otto Lake - Blanche River,4,0,0,0,0.0,02JC-12,code and name agree
+02JE-07,02JE07,Matabitchuan River,4,0,0,0,0.0,02JE-07,code and name agree
+02JD-03,02JD03,Mountain Lake - Montreal River,4,2,0,0,50.0,02JD-03,code and name agree
+05QE-08,05QE08,Cedar River Outlet,4,0,0,0,0.0,05QE-08,code and name agree
+02CE-16,02CE16,John Creek,4,1,0,1,25.0,02CE-16,code and name agree
+02AC-07,02AC07,Mackenzie River,4,0,0,0,0.0,02AC-07,code and name agree
+02AB-04,02AB04,Kakabeka Falls Dam - Kaministiquia River,4,0,0,0,0.0,02AB-04,code and name agree
+02BD-04,02BD04,Michipicoten River Outlet,3,1,0,1,33.3,02BD-04,code and name agree
+02BD-03,02BD03,Mishibishu Lake - Dog River,3,0,0,0,0.0,02BD-03,code and name agree
+02BD-02,02BD02,,3,0,0,0,0.0,,no name in reports
+02DD-01,02DD01,Cantin Lake - Pickerel River,3,0,0,0,0.0,02DD-01,code and name agree
+02DD-09,02DD09,West Bay - Lake Nippissing,3,1,1,0,33.3,02DD-09,code and name agree
+02JE-13,02JE13,Kioshkokwi Lake - Amable du Fond River,3,0,0,0,0.0,02JE-13,code and name agree
+02JC-05,02JC05,,3,1,1,0,33.3,,no name in reports
+02JD-04,02JD04,Matachewan Lake - West Montreal River,3,1,0,1,33.3,02JD-04,code and name agree
+02JD-10,02JD10,Makobe River,3,0,0,0,0.0,02JD-10,code and name agree
+05QA-02,05QA02,Minnitaki Lake - English River,3,0,0,0,0.0,05QA-02,code and name agree
+05QE-06,05QE06,Goose Lake - English River,3,0,0,0,0.0,05QE-06,code and name agree
+05PBA01,05PBA01,Redgut Bay - Rainy Lake,3,2,0,1,66.7,05PBA01,code and name agree
+04NC-10,04NC10,,3,1,0,0,33.3,,no name in reports
+02GA-13,02GA13,Black Creek - Grand River,3,0,0,0,0.0,02GA-13,code and name agree
+05PC-02,05PC02,,3,1,1,0,33.3,,no name in reports
+02HK-07,02HK07,,3,0,0,0,0.0,,no name in reports
+02HK-15,02HK15,Kasshabog Lake - North River,3,0,0,0,0.0,02HK-15,code and name agree
+02KC-10,02KC10,Couchain Lake - Bonnechere River,3,0,0,0,0.0,02KC-10,code and name agree
+02JE-17,02JE17,Manitou Lake - Amable du Fond River,3,0,0,0,0.0,02JE-17,code and name agree
+05PDA03,05PDA03,Northern Peninsula - Lake of the Woods,3,0,0,0,0.0,05PDA03,code and name agree
+02JE-02,02JE02,,3,3,3,0,100.0,,no name in reports
+02DC-11,02DC11,Marten River,3,0,0,0,0.0,02DC-11,code and name agree
+04JDB13,04JDB13,Flint Lake,3,0,0,0,0.0,04JDB13,code and name agree
+02MC-04,02MC04,,3,3,3,0,100.0,,no name in reports
+02BC-05,02BC05,White Lake Dam - White River,3,1,0,1,33.3,02BC-05,code and name agree
+04FB-05,04FB05,Attawapiskat Lake,3,0,0,0,0.0,04FB-05,code and name agree
+02CA-06,02CA06,,3,1,1,0,33.3,,no name in reports
+02EC-19,02EC19,,3,0,0,0,0.0,,no name in reports
+02FC-12,02FC12,Beatty Saugeen River,3,0,0,0,0.0,02FC-12,code and name agree
+02FC-14,02FC14,Burgoyne Creek,3,0,0,0,0.0,02FC-14,code and name agree
+02CD-06,02CD06,Quirke Lake - Serpent River,3,3,0,2,100.0,02CD-06,code and name agree
+02BC-08,02BC08,,3,0,0,0,0.0,,no name in reports
+04LA-05,04LA05,,3,0,0,0,0.0,,no name in reports
+04LB-01,04LB01,Cypress Falls - Mattagami River,3,2,1,0,66.7,04LB-01,code and name agree
+04LC-02,04LC02,,3,0,0,0,0.0,,no name in reports
+04LB-09,04LB09,Jocko Creek,3,1,0,0,33.3,04LB-09,code and name agree
+04LB-04,04LB04,Poplar Rapids River,3,0,0,0,0.0,04LB-04,code and name agree
+04LB-02,04LB02,Smoothrock Falls - Mattagami River,3,0,0,0,0.0,04LB-02,code and name agree
+02GGB07,02GGB07,Black Creek,3,0,0,0,0.0,02GGB07,code and name agree
+02CF-16,02CF16,,3,0,0,0,0.0,,no name in reports
+04LC-05,04LC05,Woman River,3,1,0,0,33.3,04LC-05,code and name agree
+02GD-12,02GD12,Fish Creek,3,0,0,0,0.0,02GD-12,code and name agree
+04LF-02,04LF02,Spruce Falls - Kapuskasing River,3,3,0,1,100.0,04LF-02,code and name agree
+04LF-04,04LF04,Pearce Creek - Lost River,3,1,0,0,33.3,04LF-04,code and name agree
+02GG-02,02GG02,,3,2,2,0,66.7,,no name in reports
+02AD-18,02AD18,,3,0,0,0,0.0,,no name in reports
+02EC-04,02EC04,,3,1,0,1,33.3,,no name in reports
+02KD-07,02KD07,Aylen River,3,0,0,0,0.0,02KD-07,code and name agree
+02ADC06,02ADC06,Gathering Lake - Namewaminikan River,3,0,0,0,0.0,02ADC06,code and name agree
+02EB-15,02EB15,,3,0,0,0,0.0,,no name in reports
+02KD-13,02KD13,Whitefish Lake - Madawaska River,3,0,0,0,0.0,02KD-13,code and name agree
+02KD-12,02KD12,Opeongo Lake,3,0,0,0,0.0,02KD-12,code and name agree
+02KD-11,02KD11,Papineau Creek,3,0,0,0,0.0,02KD-11,code and name agree
+02KD-08,02KD08,Rock Lake Dam - Madawaska River,3,0,0,0,0.0,02KD-08,code and name agree
+02KE-02,02KE02,Calabogie Lake - Madawaska River,3,2,0,2,66.7,02KE-02,code and name agree
+02KF-06,02KF06,Clyde River,3,1,0,1,33.3,02KF-06,code and name agree
+04MD-01,04MD01,Frederick House River Outlet,3,0,0,0,0.0,04MD-01,code and name agree
+02EA-15,02EA15,,3,0,0,0,0.0,,no name in reports
+02ADB10,02ADB10,Kabitotikwia River,3,0,0,0,0.0,02ADB10,code and name agree
+02DD-23,02DD23,,3,0,0,0,0.0,,no name in reports
+02MC-12,02MC12,,3,0,0,0,0.0,,no name in reports
+02MC-06,02MC06,,3,1,1,0,33.3,,no name in reports
+02BA-06,02BA06,Hays Lake,3,0,0,0,0.0,02BA-06,code and name agree
+02HE-09,02HE09,,3,1,0,0,33.3,,no name in reports
+02FC-04,02FC04,South Saugeen River Outlet,3,0,0,0,0.0,02FC-04,code and name agree
+04DAB03,04DAB03,Assin Lake - Pipestone River,3,0,0,0,0.0,04DAB03,code and name agree
+02AB-06,02AB06,Silver Falls - Kaministiquia River,3,1,0,1,33.3,02AB-06,code and name agree
+02AA-01,02AA01,Pine River,3,0,0,0,0.0,02AA-01,code and name agree
+05QD-05,05QD05,Outlet Bay - Eagle Lake,3,1,0,1,33.3,05QD-05,code and name agree
+04DAB04,04DAB04,Wastayanipi Lake - Pipestone River,3,0,0,0,0.0,04DAB04,code and name agree
+02GH-06,02GH06,,3,2,1,1,66.7,,no name in reports
+02AD-09,02AD09,,3,0,0,0,0.0,,no name in reports
+02EA-05,02EA05,Magnetawan Locks - Magnetawan River,3,2,0,0,66.7,02EA-05,code and name agree
+05QA-13,05QA13,Selwyn Lake - English River,3,0,0,0,0.0,05QA-13,code and name agree
+02BA-03,02BA03,Santoy Lake - Steel River,3,0,0,0,0.0,02BA-03,code and name agree
+02HJ-05,02HJ05,Indian River,2,0,0,0,0.0,02HJ-05,code and name agree
+02HK-06,02HK06,Chandos Lake - Crowe River,2,1,0,0,50.0,02HK-06,code and name agree
+02KC-06,02KC06,Golden Lake Dam - Bonnechere River,2,0,0,0,0.0,02KC-06,code and name agree
+02HH-08,02HH08,Nogies Creek,2,0,0,0,0.0,02HH-08,code and name agree
+02AB-18,02AB18,Sunshine Creek,2,1,0,1,50.0,02AB-18,code and name agree
+05QC-05,05QC05,Hoyles Bay - Red Lake - Chukuni River,2,0,0,0,0.0,05QC-05,code and name agree
+02AB-13,02AB13,Whitefish River,2,0,0,0,0.0,02AB-13,code and name agree
+02CE-23,02CE23,Birch Creek,2,0,0,0,0.0,02CE-23,code and name agree
+023F-03,023F03,Mindemoya River,2,0,0,0,0.0,023F-03,code and name agree
+02JC-06,02JC06,Long Lake - Englehart River,2,0,0,0,0.0,02JC-06,code and name agree
+02JC-08,02JC08,Victoria Lake - Misema River,2,2,1,0,100.0,02JC-08,code and name agree
+02HL-07,02HL07,Clare River,2,0,0,0,0.0,02HL-07,code and name agree
+05RC-07,05RC07,Pikangikum Lake - Berens River,2,0,0,0,0.0,05RC-07,code and name agree
+02CE-12,02CE12,Madawanson Lake - River aux Sables,2,0,0,0,0.0,02CE-12,code and name agree
+02JE-06,02JE06,Antoine Creek,2,0,0,0,0.0,02JE-06,code and name agree
+05QA-11,05QA11,Dizzy Lake - Sturgeon River,2,0,0,0,0.0,05QA-11,code and name agree
+05QA-12,05QA12,Sturgeon Lake - Sturgeon River,2,0,0,0,0.0,05QA-12,code and name agree
+05QA-04,05QA04,Flying Loon Lake - English River,2,0,0,0,0.0,05QA-04,code and name agree
+02AB-15,02AB15,Rivière des Iles,2,0,0,0,0.0,02AB-15,code and name agree
+02GG-06,02GG06,,2,0,0,0,0.0,,no name in reports
+02BE-07,02BE07,Antler Lake - Montreal River,2,0,0,0,0.0,02BE-07,code and name agree
+05PB-02,05PB02,,2,0,0,0,0.0,,no name in reports
+05PAB18,05PAB18,Weikwabinonaw River,2,0,0,0,0.0,05PAB18,code and name agree
+02CA-12,02CA12,,2,0,0,0,0.0,,no name in reports
+05PBA02,05PBA02,Rainy Lake - Trout River,2,0,0,0,0.0,05PBA02,code and name agree
+05PBA10,05PBA10,Bearpaw Lake - Trout River,2,0,0,0,0.0,05PBA10,code and name agree
+05PBB14,05PBB14,Manomin River,2,1,0,1,50.0,05PBB14,code and name agree
+02HH-05,02HH05,Mississagua River,2,1,0,1,50.0,02HH-05,code and name agree
+02AE-01,02AE01,Gravel River,2,0,0,0,0.0,02AE-01,code and name agree
+02CAA09,02CAA09,Echo River,2,0,0,0,0.0,02CAA09,code and name agree
+02CAA02,02CAA02,Munuscong Lake - St. Marys River,2,1,0,1,50.0,02CAA02,code and name agree
+02DC-15,02DC15,Northeast Arm - Lake Temagami,2,0,0,0,0.0,02DC-15,code and name agree
+02JE-03,02JE03,McLaren's Bay - Lake Timiskaming - Ottawa River,2,1,0,1,50.0,02JE-03,code and name agree
+02CE-11,02CE11,Ramsey Lake - Spanish River,2,2,0,0,100.0,02CE-11,code and name agree
+05PCD01,05PCD01,Rainy River,2,0,0,0,0.0,05PCD01,code and name agree
+02JD-11,02JD11,Sydney Creek,2,1,0,0,50.0,02JD-11,code and name agree
+02EB-07,02EB07,Baysville Narrows - South Branch Muskoka River,2,1,0,0,50.0,02EB-07,code and name agree
+02KD-09,02KD09,Baptiste Lake - York River,2,0,0,0,0.0,02KD-09,code and name agree
+02BF-09,02BF09,,2,2,0,1,100.0,,no name in reports
+02DC-06,02DC06,,2,0,0,0,0.0,,no name in reports
+02ADC09,02ADC09,Trapnarrows Lake - Namewaminikan River,2,0,0,0,0.0,02ADC09,code and name agree
+02ADC11,02ADC11,Postagoni River,2,0,0,0,0.0,02ADC11,code and name agree
+02ADC12,02ADC12,Wildgoose Creek,2,0,0,0,0.0,02ADC12,code and name agree
+04ME-01,04ME01,,2,0,0,0,0.0,,no name in reports
+04MD-05,04MD05,,2,0,0,0,0.0,,no name in reports
+04ME-03,04ME03,,2,0,0,0,0.0,,no name in reports
+02EA-22,02EA22,,2,0,0,0,0.0,,no name in reports
+04KBA02,04KBA02,Maidmans Creek,2,0,0,0,0.0,04KBA02,code and name agree
+04LA-03,04LA03,Mattagami Lake Dam - Mattagami River,2,0,0,0,0.0,04LA-03,code and name agree
+02GF-03,02GF03,,2,0,0,0,0.0,,no name in reports
+04LC-11,04LC11,Bromley Lake - Nat River,2,1,0,0,50.0,04LC-11,code and name agree
+02GH-02,02GH02,,2,0,0,0,0.0,,no name in reports
+02GF-02,02GF02,,2,1,0,0,50.0,,no name in reports
+04LF-05,04LF05,Hull Creek,2,0,0,0,0.0,04LF-05,code and name agree
+04LF-08,04LF08,Little Lost River - Lost River,2,2,1,0,100.0,04LF-08,code and name agree
+02DD-21,02DD21,,2,0,0,0,0.0,,no name in reports
+02CH-01,02CH01,Bear Lake - Whitefish River,2,0,0,0,0.0,02CH-01,code and name agree
+02CH-03,02CH03,Mahzenazing River,2,1,0,0,50.0,02CH-03,code and name agree
+02CH-05,02CH05,,2,0,0,0,0.0,,no name in reports
+02AD-21,02AD21,,2,0,0,0,0.0,,no name in reports
+02ADB04,02ADB04,Obonga Lake - Kopka River,2,0,0,0,0.0,02ADB04,code and name agree
+02ADB05,02ADB05,Chisamore Lake - Gull River,2,0,0,0,0.0,02ADB05,code and name agree
+02LA-09,02LA09,,2,0,0,0,0.0,,no name in reports
+02KD-14,02KD14,Rockingham Creek,2,2,0,0,100.0,02KD-14,code and name agree
+02KD-17,02KD17,,2,1,0,0,50.0,,no name in reports
+04LK-11,04LK11,No Name (Missinaibi River Tributary 1),2,0,0,0,0.0,04LK-11,code and name agree
+04LJ-01,04LJ01,Skunk Island - Missinaibi River,2,0,0,0,0.0,04LJ-01,code and name agree
+04LLB02,04LLB02,Friday Creek Outlet,2,0,0,0,0.0,04LLB02,code and name agree
+04MB-02,04MB02,Black River Dam - Black River,2,0,0,0,0.0,04MB-02,code and name agree
+04MC-03,04MC03,Iroquois Falls - Abitibi River,2,0,0,0,0.0,04MC-03,code and name agree
+04MB-06,04MB06,Pike River,2,0,0,0,0.0,04MB-06,code and name agree
+02KC-12,02KC12,Brennans Creek,2,1,0,0,50.0,02KC-12,code and name agree
+04CE-08,04CE08,Angling Lake - Fawn River,2,0,0,0,0.0,04CE-08,code and name agree
+02ADB11,02ADB11,Majata Lake - Roaring River,2,0,0,0,0.0,02ADB11,code and name agree
+02DD-28,02DD28,,2,1,0,0,50.0,,no name in reports
+02FD-07,02FD07,,2,1,1,0,50.0,,no name in reports
+04CE-07,04CE07,Crandall Falls - Fawn River,2,0,0,0,0.0,04CE-07,code and name agree
+02ADB14,02ADB14,Whitesand River,2,0,0,0,0.0,02ADB14,code and name agree
+02FD-03,02FD03,,2,0,0,0,0.0,,no name in reports
+02HE-10,02HE10,,2,1,0,0,50.0,,no name in reports
+02HF-02,02HF02,Goose Lake - Burnt River,2,0,0,0,0.0,02HF-02,code and name agree
+02BA-01,02BA01,Martinet Lake - Little Pic River,2,0,0,0,0.0,02BA-01,code and name agree
+02BB-11,02BB11,Cedar Creek,2,0,0,0,0.0,02BB-11,code and name agree
+02BA-07,02BA07,,2,0,0,0,0.0,,no name in reports
+04JD-01,04JD01,,2,1,0,1,50.0,,no name in reports
+02FB-06,02FB06,,2,1,0,1,50.0,,no name in reports
+02FA-11,02FA11,,2,1,1,0,50.0,,no name in reports
+02MB-02,02MB02,,2,0,0,0,0.0,,no name in reports
+04JF-12,04JF12,Fleming Lake - Kawashkagama River,2,1,0,1,50.0,04JF-12,code and name agree
+02CA-11,02CA11,,2,1,0,1,50.0,,no name in reports
+04HAA01,04HAA01,Chickney Channel - Albany River,2,2,1,1,100.0,04HAA01,code and name agree
+04HAA02,04HAA02,Albany River Outlet,2,2,1,1,100.0,04HAA02,code and name agree
+02HE-03,02HE03,,2,2,0,0,100.0,,no name in reports
+02HE-05,02HE05,,2,0,0,0,0.0,,no name in reports
+02AE-03,02AE03,Jackpine River,2,0,0,0,0.0,02AE-03,code and name agree
+02CB-09,02CB09,Wenebegon Lake,2,0,0,0,0.0,02CB-09,code and name agree
+04FCA01,04FCA01,(Attawapiskat),2,0,0,0,0.0,04FCA01,code and name agree
+04FCA02,04FCA02,Attawapiskat River Outlet,2,0,0,0,0.0,04FCA02,code and name agree
+04GAA20,04GAA20,Doghole River,2,1,0,1,50.0,04GAA20,code and name agree
+04GBA08,04GBA08,Brennan Lake - Allan Water,2,0,0,0,0.0,04GBA08,code and name agree
+04GBA13,04GBA13,Flindt River,2,0,0,0,0.0,04GBA13,code and name agree
+05QB-03,05QB03,East Corner - Lac Seul,2,0,0,0,0.0,05QB-03,code and name agree
+02CB-05,02CB05,Embarass River,2,2,0,0,100.0,02CB-05,code and name agree
+02EA-03,02EA03,Wahwashkesh Dam - Magnetawan River,2,1,0,1,50.0,02EA-03,code and name agree
+02CB-03,02CB03,Aubinadong River,2,2,0,2,100.0,02CB-03,code and name agree
+05QB-09,05QB09,Vermillion River Outlet,2,0,0,0,0.0,05QB-09,code and name agree
+05QD-13,05QD13,Gullwing Creek,2,0,0,0,0.0,05QD-13,code and name agree
+02AC-05,02AC05,Spruce River,2,0,0,0,0.0,02AC-05,code and name agree
+02AC-06,02AC06,Nonwatin River,2,1,0,0,50.0,02AC-06,code and name agree
+05QA-18,05QA18,Petry River,2,0,0,0,0.0,05QA-18,code and name agree
+05QD-10,05QD10,Walker Falls - Wabigoon River,2,0,0,0,0.0,05QD-10,code and name agree
+02AB-07,02AB07,Jordain Lake - Dog River,1,0,0,0,0.0,02AB-07,code and name agree
+05QD-08,05QD08,Bear Narrows - Eagle Lake,1,1,0,1,100.0,05QD-08,code and name agree
+02AC-03,02AC03,Black Sturgeon Lake - Black Sturgeon River,1,0,0,0,0.0,02AC-03,code and name agree
+05QA-19,05QA19,Sandy River,1,0,0,0,0.0,05QA-19,code and name agree
+05QA-22,05QA22,Scotch River,1,0,0,0,0.0,05QA-22,code and name agree
+05QD-12,05QD12,Rugby Creek,1,0,0,0,0.0,05QD-12,code and name agree
+05QE-03,05QE03,Lount Lake - English River,1,0,0,0,0.0,05QE-03,code and name agree
+05QE-04,05QE04,,1,0,0,0,0.0,,no name in reports
+02EA-04,02EA04,Poverty Bay Chutes - Magnetawan River,1,0,0,0,0.0,02EA-04,code and name agree
+05QB-02,05QB02,Manitou Narrows - Lac Seul,1,0,0,0,0.0,05QB-02,code and name agree
+05QB-05,05QB05,Farlinger Lake - English River,1,0,0,0,0.0,05QB-05,code and name agree
+05QB-20,05QB20,Whitefish Channel,1,0,0,0,0.0,05QB-20,code and name agree
+05QB-21,05QB21,Sen Bay - Lac Seul,1,0,0,0,0.0,05QB-21,code and name agree
+02CB-01,02CB01,Black Creek - Mississagi River,1,1,0,1,100.0,02CB-01,code and name agree
+02CB-02,02CB02,Wenebegon River,1,0,0,0,0.0,02CB-02,code and name agree
+02DD-16,02DD16,Wolseley River,1,1,0,1,100.0,02DD-16,code and name agree
+04FB-12,04FB12,Marten Drinking River,1,0,0,0,0.0,04FB-12,code and name agree
+04FB-16,04FB16,Pichinamei Lake,1,0,0,0,0.0,04FB-16,code and name agree
+04FCB02,04FCB02,McFaulds Lake - Attawapiskat River,1,0,0,0,0.0,04FCB02,code and name agree
+04FCB05,04FCB05,Greig Lake - Muketei River,1,1,0,1,100.0,04FCB05,code and name agree
+04FCB13,04FCB13,Langfeld Lake,1,1,0,1,100.0,04FCB13,code and name agree
+04FCB16,04FCB16,(No Name),1,0,0,0,0.0,04FCB16,code and name agree
+04GAA04,04GAA04,Bamaji Lake - Cat River,1,0,0,0,0.0,04GAA04,code and name agree
+04GAA05,04GAA05,Slate Falls - Cat River,1,0,0,0,0.0,04GAA05,code and name agree
+04GAA07,04GAA07,Lake St. Joseph Diversion,1,0,0,0,0.0,04GAA07,code and name agree
+04GAA11,04GAA11,Birch River,1,1,0,1,100.0,04GAA11,code and name agree
+04GBA16,04GBA16,Aylsworth Lake - Brightsand River,1,0,0,0,0.0,04GBA16,code and name agree
+04GBB01,04GBB01,Amy Falls - Ogoki River,1,0,0,0,0.0,04GBB01,code and name agree
+04GBB02,04GBB02,Ottertail River,1,0,0,0,0.0,04GBB02,code and name agree
+04GD-12,04GD12,Kagianagami Lake,1,0,0,0,0.0,04GD-12,code and name agree
+04GE-11,04GE11,Rhuda Lake - Dusey River,1,0,0,0,0.0,04GE-11,code and name agree
+04JA-06,04JA06,Nameigos Lake - Kabinakagami River,1,0,0,0,0.0,04JA-06,code and name agree
+04JB-05,04JB05,Fox River,1,0,0,0,0.0,04JB-05,code and name agree
+04JB-08,04JB08,Squirrel River,1,0,0,0,0.0,04JB-08,code and name agree
+04JC-03,04JC03,Shekak River Outlet,1,0,0,0,0.0,04JC-03,code and name agree
+04JC-05,04JC05,Highwood Rapids - Nagagami River,1,0,0,0,0.0,04JC-05,code and name agree
+02BC-11,02BC11,East Pukaskwa River,1,0,0,0,0.0,02BC-11,code and name agree
+02AE-04,02AE04,Jackfish River,1,0,0,0,0.0,02AE-04,code and name agree
+04DBB12,04DBB12,Kingfisher Lake - Asheweig River,1,0,0,0,0.0,04DBB12,code and name agree
+04DBB21,04DBB21,(Kasabonika Lake),1,0,0,0,0.0,04DBB21,code and name agree
+04DCA01,04DCA01,Winisk River Outlet,1,0,0,0,0.0,04DCA01,code and name agree
+04DCA02,04DCA02,Shamattawa River Outlet,1,0,0,0,0.0,04DCA02,code and name agree
+02BC-01,02BC01,Pukaskwa River,1,0,0,0,0.0,02BC-01,code and name agree
+02DD-11,02DD11,Wauquimakog Lake - Pickerel River,1,0,0,0,0.0,02DD-11,code and name agree
+02DD-13,02DD13,,1,0,0,0,0.0,,no name in reports
+02BA-08,02BA08,Boomerang Creek - Little Pic River,1,0,0,0,0.0,02BA-08,code and name agree
+02BA-09,02BA09,Steel Lake - Steel River,1,1,0,0,100.0,02BA-09,code and name agree
+04JC-08,04JC08,Pitopiko River,1,0,0,0,0.0,04JC-08,code and name agree
+04JC-10,04JC10,Beaton River,1,0,0,0,0.0,04JC-10,code and name agree
+04JC-12,04JC12,,1,0,0,0,0.0,,no name in reports
+02FB-08,02FB08,,1,0,0,0,0.0,,no name in reports
+04JC-15,04JC15,Mercer Creek - Otasawian River,1,0,0,0,0.0,04JC-15,code and name agree
+04JC-17,04JC17,Skunk River,1,0,0,0,0.0,04JC-17,code and name agree
+04JD-06,04JD06,,1,0,0,0,0.0,,no name in reports
+04JD-11,04JD11,,1,0,0,0,0.0,,no name in reports
+04JD-12,04JD12,,1,0,0,0,0.0,,no name in reports
+04JD-17,04JD17,,1,0,0,0,0.0,,no name in reports
+04JDA02,04JDA02,Kenogami Diversion Dam - Kenogami River,1,0,0,0,0.0,04JDA02,code and name agree
+04JDA05,04JDA05,Parent Creek - Kenogamisis River,1,0,0,0,0.0,04JDA05,code and name agree
+04JDA06,04JDA06,Murky Creek,1,0,0,0,0.0,04JDA06,code and name agree
+04JDB04,04JDB04,Henderson Creek - Pagwachuan River,1,0,0,0,0.0,04JDB04,code and name agree
+04JDB06,04JDB06,Flint River,1,0,0,0,0.0,04JDB06,code and name agree
+04JDB10,04JDB10,Bicknell River,1,0,0,0,0.0,04JDB10,code and name agree
+04JF-06,04JF06,Albert Falls - Kawashkagama River,1,0,0,0,0.0,04JF-06,code and name agree
+04JF-11,04JF11,Esnagami River,1,0,0,0,0.0,04JF-11,code and name agree
+04JF-15,04JF15,Storm Lake,1,0,0,0,0.0,04JF-15,code and name agree
+04CAA02,04CAA02,Sandy Lake - Severn River,1,0,0,0,0.0,04CAA02,code and name agree
+04CAA03,04CAA03,Sandy Lake West Arm - Severn River,1,0,0,0,0.0,04CAA03,code and name agree
+04CAA06,04CAA06,Dawson River,1,0,0,0,0.0,04CAA06,code and name agree
+04CAA08,04CAA08,Roseberry River Outlet,1,0,0,0,0.0,04CAA08,code and name agree
+04CAA12,04CAA12,Stain River,1,0,0,0,0.0,04CAA12,code and name agree
+04CAB01,04CAB01,Finger Lake - Severn River,1,0,0,0,0.0,04CAB01,code and name agree
+04CAB07,04CAB07,Butson Lake - Severn River,1,0,0,0,0.0,04CAB07,code and name agree
+04CAB08,04CAB08,Deer Lake,1,0,0,0,0.0,04CAB08,code and name agree
+04CE-09,04CE09,Big Trout Lake - Fawn River,1,0,0,0,0.0,04CE-09,code and name agree
+04DAB02,04DAB02,Misamikwash Lake - Pipestone River,1,0,0,0,0.0,04DAB02,code and name agree
+02DD-22,02DD22,,1,0,0,0,0.0,,no name in reports
+02HF-10,02HF10,Redstone River,1,1,0,1,100.0,02HF-10,code and name agree
+02EC-15,02EC15,,1,1,0,0,100.0,,no name in reports
+02EC-18,02EC18,,1,1,0,1,100.0,,no name in reports
+04KA-04,04KA04,Little Sutherland River - Cheepash River,1,0,0,0,0.0,04KA-04,code and name agree
+04KA-07,04KA07,Renison River,1,0,0,0,0.0,04KA-07,code and name agree
+04LB-08,04LB08,,1,0,0,0,0.0,,no name in reports
+04LC-08,04LC08,Wakami River,1,0,0,0,0.0,04LC-08,code and name agree
+04LD-02,04LD02,,1,0,0,0,0.0,,no name in reports
+04LD-06,04LD06,Wellington Creek,1,0,0,0,0.0,04LD-06,code and name agree
+02CF-04,02CF04,Stobie Dam - Vermilion River,1,0,0,0,0.0,02CF-04,code and name agree
+02CF-06,02CF06,Onaping Lake,1,1,0,0,100.0,02CF-06,code and name agree
+02CF-10,02CF10,,1,1,0,0,100.0,,no name in reports
+02CG-07,02CG07,,1,0,0,0,0.0,,no name in reports
+02GH-03,02GH03,,1,0,0,0,0.0,,no name in reports
+02GD-13,02GD13,Black Creek,1,1,0,1,100.0,02GD-13,code and name agree
+02GF-06,02GF06,,1,1,0,1,100.0,,no name in reports
+02GG-04,02GG04,,1,0,0,0,0.0,,no name in reports
+02GC-10,02GC10,,1,0,0,0,0.0,,no name in reports
+02ADC14,02ADC14,North Wind River,1,0,0,0,0.0,02ADC14,code and name agree
+02CC-03,02CC03,Pig Pen Chute -  Mississagi River,1,1,0,1,100.0,02CC-03,code and name agree
+02CC-04,02CC04,Little White River,1,1,0,1,100.0,02CC-04,code and name agree
+02CC-08,02CC08,Snowshoe Creek,1,1,0,1,100.0,02CC-08,code and name agree
+02AD-22,02AD22,,1,0,0,0,0.0,,no name in reports
+02ADA05,02ADA05,Gull Bay - Lake Nipigon,1,1,0,1,100.0,02ADA05,code and name agree
+02ADB01,02ADB01,Jackinnes Lake - Gull River,1,1,0,1,100.0,02ADB01,code and name agree
+02ADB03,02ADB03,Holinshead Lake - Roaring River,1,0,0,0,0.0,02ADB03,code and name agree
+02BC-09,02BC09,Cross Lake - Shabotik River,1,0,0,0,0.0,02BC-09,code and name agree
+02CG-12,02CG12,,1,0,0,0,0.0,,no name in reports
+02CG-18,02CG18,,1,0,0,0,0.0,,no name in reports
+02CH-04,02CH04,,1,1,0,0,100.0,,no name in reports
+02DA-01,02DA01,Wanapitei Lake - Wanapitei River,1,0,0,0,0.0,02DA-01,code and name agree
+04LE-05,04LE05,,1,0,0,0,0.0,,no name in reports
+04LE-07,04LE07,Swanson River,1,1,0,0,100.0,04LE-07,code and name agree
+04LF-09,04LF09,Remi River,1,0,0,0,0.0,04LF-09,code and name agree
+04LG-13,04LG13,,1,1,0,0,100.0,,no name in reports
+02KF-08,02KF08,Crotch Lake - Mississippi River,1,0,0,0,0.0,02KF-08,code and name agree
+02KF-09,02KF09,Lower Mazinaw Lake - Mississippi River,1,1,0,0,100.0,02KF-09,code and name agree
+02KF-10,02KF10,Buckshot Creek,1,0,0,0,0.0,02KF-10,code and name agree
+02KF-12,02KF12,Indian Creek,1,1,0,1,100.0,02KF-12,code and name agree
+02DC-04,02DC04,The Elbow - Sturgeon River,1,1,0,0,100.0,02DC-04,code and name agree
+02ADC03,02ADC03,Turkey Lake - Namewaminikan River,1,0,0,0,0.0,02ADC03,code and name agree
+02CA-04,02CA04,,1,0,0,0,0.0,,no name in reports
+02KD-10,02KD10,,1,0,0,0,0.0,,no name in reports
+02KD-19,02KD19,,1,0,0,0,0.0,,no name in reports
+02KD-20,02KD20,,1,0,0,0,0.0,,no name in reports
+02KE-04,02KE04,Highland Falls - Madawaska River,1,0,0,0,0.0,02KE-04,code and name agree
+02KE-06,02KE06,Waba Creek,1,0,0,0,0.0,02KE-06,code and name agree
+04LH-04,04LH04,Little Missinaibi Lake,1,1,0,0,100.0,04LH-04,code and name agree
+04LK-07,04LK07,Obyou Creek - Mattawishkwia River,1,0,0,0,0.0,04LK-07,code and name agree
+04LK-12,04LK12,Kendall Creek,1,0,0,0,0.0,04LK-12,code and name agree
+04LL-01,04LL01,,1,0,0,0,0.0,,no name in reports
+04LLA03,04LLA03,Crow Creek,1,0,0,0,0.0,04LLA03,code and name agree
+04MA-11,04MA11,Ghost River,1,0,0,0,0.0,04MA-11,code and name agree
+04MC-06,04MC06,,1,0,0,0,0.0,,no name in reports
+04MC-07,04MC07,Mistango River,1,0,0,0,0.0,04MC-07,code and name agree
+04MC-09,04MC09,Foisie River,1,0,0,0,0.0,04MC-09,code and name agree
+04MD-06,04MD06,Buskegau River,1,0,0,0,0.0,04MD-06,code and name agree
+04MEB02,04MEB02,Nine Mile Rapids - Abitibi River,1,0,0,0,0.0,04MEB02,code and name agree
+04MEB03,04MEB03,Otter Rapids - Abitibi River,1,0,0,0,0.0,04MEB03,code and name agree
+04MEB05,04MEB05,Island Falls - Abitibi River,1,1,0,0,100.0,04MEB05,code and name agree
+04MEB08,04MEB08,Onakawana River,1,0,0,0,0.0,04MEB08,code and name agree
+02EA-11,02EA11,Naiscoot River,1,1,0,0,100.0,02EA-11,code and name agree
+02EA-13,02EA13,Still River,1,0,0,0,0.0,02EA-13,code and name agree
+02EA-19,02EA19,,1,0,0,0,0.0,,no name in reports
+02EA-21,02EA21,,1,0,0,0,0.0,,no name in reports
+02BD-08,02BD08,,1,0,0,0,0.0,,no name in reports
+02BD-09,02BD09,Windermere Lake Dam - Windermere River,1,0,0,0,0.0,02BD-09,code and name agree
+02HH-06,02HH06,Eels Creek,1,0,0,0,0.0,02HH-06,code and name agree
+02HK-04,02HK04,,1,0,0,0,0.0,,no name in reports
+02HK-05,02HK05,,1,1,0,0,100.0,,no name in reports
+02HK-11,02HK11,Paudash Lake Dam - Crowe River,1,1,0,0,100.0,02HK-11,code and name agree
+02HK-12,02HK12,Deer River,1,0,0,0,0.0,02HK-12,code and name agree
+02HK-14,02HK14,Hoards Creek,1,0,0,0,0.0,02HK-14,code and name agree
+02KA-07,02KA07,,1,0,0,0,0.0,,no name in reports
+02KA-08,02KA08,,1,0,0,0,0.0,,no name in reports
+02KB-13,02KB13,,1,0,0,0,0.0,,no name in reports
+02BD-10,02BD10,Esnagi Lake Dam - Magpie River,1,1,0,0,100.0,02BD-10,code and name agree
+02BD-11,02BD11,Wabatongushi Lake,1,0,0,0,0.0,02BD-11,code and name agree
+04MEB13,04MEB13,Trappers Creek,1,1,0,0,100.0,04MEB13,code and name agree
+04NC-11,04NC11,,1,0,0,0,0.0,,no name in reports
+04NCB07,04NCB07,Bayly Lake - Lawagamau River,1,1,0,0,100.0,04NCB07,code and name agree
+04NCB21,04NCB21,Hopper Creek,1,0,0,0,0.0,04NCB21,code and name agree
+05PB-18,05PB18,,1,0,0,0,0.0,,no name in reports
+05PBA06,05PBA06,Pekagoning Lake - Turtle River,1,0,0,0,0.0,05PBA06,code and name agree
+05PBA08,05PBA08,White Otter Lake - Turtle River,1,0,0,0,0.0,05PBA08,code and name agree
+05PBA09,05PBA09,Upper Little Turtle River,1,0,0,0,0.0,05PBA09,code and name agree
+02HM-09,02HM09,,1,1,0,0,100.0,,no name in reports
+02BD-17,02BD17,Soderston Creek,1,0,0,0,0.0,02BD-17,code and name agree
+02BE-08,02BE08,,1,1,0,1,100.0,,no name in reports
+02BE-10,02BE10,Baldhead River,1,0,0,0,0.0,02BE-10,code and name agree
+02JE-16,02JE16,,1,0,0,0,0.0,,no name in reports
+02FE-06,02FE06,South Maitland River Outlet,1,0,0,0,0.0,02FE-06,code and name agree
+02FF-09,02FF09,Bannockburn River,1,0,0,0,0.0,02FF-09,code and name agree
+02KA-06,02KA06,,1,0,0,0,0.0,,no name in reports
+05PBB04,05PBB04,Upper Seine Bay - Seine River,1,0,0,0,0.0,05PBB04,code and name agree
+05PBB06,05PBB06,Old Man Lake - Seine River,1,0,0,0,0.0,05PBB06,code and name agree
+05PBB07,05PBB07,Lac des Mille Lacs - Seine River,1,0,0,0,0.0,05PBB07,code and name agree
+05PBB11,05PBB11,Manitou Lakes,1,0,0,0,0.0,05PBB11,code and name agree
+05PBB18,05PBB18,Big Canoe River,1,0,0,0,0.0,05PBB18,code and name agree
+05PCD06,05PCD06,La Vallée River,1,0,0,0,0.0,05PCD06,code and name agree
+05PDA02,05PDA02,Dogpaw Lake - Atikwa River,1,1,0,1,100.0,05PDA02,code and name agree
+05PDB02,05PDB02,Falcon River,1,0,0,0,0.0,05PDB02,code and name agree
+05PE-02,05PE02,Whitedog Falls - Winnipeg River,1,1,0,1,100.0,05PE-02,code and name agree
+05PE-05,05PE05,Cygnet River,1,1,0,1,100.0,05PE-05,code and name agree
+05PG-06,05PG06,West Hawk Lake - Whiteshell River,1,0,0,0,0.0,05PG-06,code and name agree
+02CE-04,02CE04,Big Eddy Generating Station - Spanish River,1,0,0,0,0.0,02CE-04,code and name agree
+02CE-05,02CE05,Cedar Rapids - Spanish River,1,0,0,0,0.0,02CE-05,code and name agree
+02CE-10,02CE10,,1,0,0,0,0.0,,no name in reports
+02DD-07,02DD07,Dollars Lake - Pickerel River,1,1,0,1,100.0,02DD-07,code and name agree
+02HL-08,02HL08,Deloro Ruins - Moira RIver,1,1,0,0,100.0,02HL-08,code and name agree
+02CE-13,02CE13,Wakonassin River,1,1,0,1,100.0,02CE-13,code and name agree
+02CE-14,02CE14,Fleck Creek,1,1,0,1,100.0,02CE-14,code and name agree
+029C-03,029C03,Wellers Bay,1,0,0,0,0.0,029C-03,code and name agree
+02JC-07,02JC07,,1,1,0,0,100.0,,no name in reports
+02JD-05,02JD05,Mistinikon Lake - West Montreal River,1,0,0,0,0.0,02JD-05,code and name agree
+02JD-06,02JD06,Lady Evelyn River,1,0,0,0,0.0,02JD-06,code and name agree
+05QA-07,05QA07,Sturgeon River Outlet,1,0,0,0,0.0,05QA-07,code and name agree
+02AB-14,02AB14,Eayrs Lake,1,0,0,0,0.0,02AB-14,code and name agree
+023F-01,023F01,Kagawong River,1,0,0,0,0.0,023F-01,code and name agree
+05QC-07,05QC07,Little Trout Lake - Troutlake River,1,0,0,0,0.0,05QC-07,code and name agree
+02BC-13,02BC13,Depew River,1,0,0,0,0.0,02BC-13,code and name agree
+05RC-08,05RC08,Berens Lake - Berens River,1,0,0,0,0.0,05RC-08,code and name agree
+05RC-21,05RC21,Berens Lake South Arm - Berens River,1,0,0,0,0.0,05RC-21,code and name agree
