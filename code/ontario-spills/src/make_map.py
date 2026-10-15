@@ -3,16 +3,20 @@ make_map.py - Map spills per 100 km2 by quaternary watershed (2023-2025).
 
 Downloads the Ontario Watershed Boundaries (OWB) quaternary layer from the
 Province's open-data map service (Land Information Ontario), joins it to the
-table made by make_map_table.py on the watershed code, and draws the map.
+table made by make_map_table.py on watershed code and name, and draws the map.
 
 Spills are divided by watershed area because a large watershed collects more
 reports just by being large.
 
 Output: output/figures/spills_watershed_map.png
-        output/tables/watershed_map_join_check.csv  (codes that did not match)
+        output/tables/watershed_map_join_check.csv  (how each code was matched)
+        output/spills_watersheds_v2.gpkg  (joined layer for QGIS)
 """
 
 import json
+import re
+import unicodedata
+from difflib import SequenceMatcher
 from pathlib import Path
 
 import geopandas as gpd
@@ -29,6 +33,10 @@ TABLE = ROOT / "output" / "tables" / "spills_by_quaternary_watershed_2023_2025.c
 OWB = ROOT / "data" / "external" / "owb_main_units.geojson"
 FIG = ROOT / "output" / "figures" / "spills_watershed_map.png"
 CHECK = ROOT / "output" / "tables" / "watershed_map_join_check.csv"
+GPKG = ROOT / "output" / "spills_watersheds_v2.gpkg"
+PROVINCE = ROOT / "data" / "external" / "ontario_boundary.geojson"
+MUNIS = ROOT / "data" / "external" / "municipal_boundaries.gpkg"  # LIO_Open03/MapServer/14PROVINCE_URL = ("https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/"
+                "LIO_OPEN_DATA/LIO_Open03/MapServer/0/query")
 
 OWB_URL = ("https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/"
            "LIO_OPEN_DATA/LIO_Open04/MapServer/27/query")
@@ -64,6 +72,87 @@ def download_owb() -> None:
     OWB.write_text(json.dumps({"type": "FeatureCollection", "features": features}))
 
 
+def ontario_land():
+    """Ontario's provincial boundary (land only; the Great Lakes are outside it)."""
+    if not PROVINCE.exists():
+        r = requests.get(PROVINCE_URL, params={"where": "1=1", "outSR": CRS, "maxAllowableOffset": 100,
+                                               "f": "geojson"}, timeout=300)
+        r.raise_for_status()
+        PROVINCE.write_text(r.text)
+    return gpd.read_file(PROVINCE).set_crs(CRS, allow_override=True).buffer(0).union_all()
+
+
+def share_in_ontario(sheds: gpd.GeoDataFrame) -> pd.Series:
+    """Share of each watershed's area inside Ontario's provincial boundary."""
+    return sheds.intersection(ontario_land()).area / sheds.area
+
+
+def simplify(name) -> str:
+    """Lower case, accents removed, letters and digits only."""
+    name = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def match_codes(spills: pd.DataFrame, sheds: gpd.GeoDataFrame) -> pd.DataFrame:
+    """Find the current watershed for each code used in the spill reports.
+
+    The Province renumbered some watersheds between versions of the boundary
+    layer, so a code alone can point to the wrong place (e.g. reports say
+    "Mad River" under 02ED-09, which is now the Boyne River). A code is only
+    trusted when the name in the reports agrees with the boundary layer;
+    otherwise the name is looked up within the same tertiary watershed (first
+    four characters). Reports with no watershed name can't be checked and are
+    left off the map.
+    """
+    by_code = sheds.set_index("WATERSHED_CODE").WATERSHED_NAME.map(simplify)
+    by_name = sheds.assign(key=sheds.WATERSHED_CODE.str[:4] + "|" + sheds.WATERSHED_NAME.map(simplify))
+    by_name = by_name.drop_duplicates("key", keep=False).set_index("key").WATERSHED_CODE
+
+    codes, how = [], []
+    for code, name in zip(spills.quat_code, spills.quat_name):
+        if pd.isna(name):
+            codes.append(None); how.append("no name in reports")
+        elif code in by_code and SequenceMatcher(None, simplify(name), by_code[code]).ratio() >= 0.8:
+            codes.append(code); how.append("code and name agree")
+        elif f"{code[:4]}|{simplify(name)}" in by_name:
+            codes.append(by_name[f"{code[:4]}|{simplify(name)}"]); how.append("matched by name (code changed)")
+        else:
+            codes.append(None); how.append("name not found in boundary layer")
+    spills = spills.assign(map_code=codes, match=how)
+    spills.to_csv(CHECK, index=False)
+    print(spills.groupby("match").spills.agg(["size", "sum"]))
+    return spills
+
+
+def write_geopackage(m: gpd.GeoDataFrame) -> None:
+    """The joined layer, for styling in QGIS."""
+    out = m.rename(columns={"WATERSHED_CODE": "code", "WATERSHED_NAME": "name"})
+    out["area_km2"] = (out.AREA_HECTARE / 100).round(1)
+    out["per100km2"] = out.per100km2.round(2)
+    out["unit_type"] = "Quaternary watershed"
+    out.loc[~out.in_ontario, "unit_type"] = "Outside Ontario"
+    out.loc[out.code.str.endswith("00"), "unit_type"] = "Lake, shoreline or outside Ontario"
+    out = out[["code", "name", "unit_type", "area_km2", "spills", "per100km2", "reached_water",
+               "pct_reached_water", "sewage_to_water", "fuel_oil_to_water", "geometry"]]
+    out.to_file(GPKG, layer="spills_by_watershed_2023_2025", driver="GPKG")
+
+    # Shoreline strips: land drained by small creeks straight into a lake
+    # (e.g. Grimsby, Highland Creek). They have no numbered watershed, so no
+    # report can be placed in them. Clipped to land so the lakes aren't shaded.
+    shore = out[out.code.str.endswith("-00")][["code", "geometry"]].copy()
+    # The provincial boundary includes nearshore lake area, so clip to the land
+    # parts of municipalities instead (mainland and islands, not "Water").
+    munis = gpd.read_file(MUNIS).to_crs(CRS)
+    land = munis[munis.MUNICIPAL_AREA_EXTENT_TYPE != "Water"].buffer(0).union_all()
+    shore["geometry"] = shore.intersection(land)
+    shore = shore.explode(index_parts=False)
+    shore = shore[shore.geom_type == "Polygon"]  # drop stray lines/points from the clip
+    shore = shore.dissolve("code").reset_index()
+    shore = shore[shore.area > 1e6]
+    shore.to_file(GPKG, layer="shoreline_not_mapped", driver="GPKG")
+    print(f"Saved {GPKG.relative_to(ROOT)}")
+
+
 def main() -> None:
     if not OWB.exists():
         print("Downloading Ontario Watershed Boundaries (quaternary)...")
@@ -74,17 +163,21 @@ def main() -> None:
         "QUATERNARY_WATERSHED_NAME": "first", "AREA_HECTARE": "sum"}).reset_index()
     sheds = sheds.rename(columns={"QUATERNARY_WATERSHED_CODE": "WATERSHED_CODE",
                                   "QUATERNARY_WATERSHED_NAME": "WATERSHED_NAME"})
-    spills = pd.read_csv(TABLE)
+    sheds["in_ontario"] = share_in_ontario(sheds) >= 0.1
+    spills = match_codes(pd.read_csv(TABLE), sheds)
 
-    # Check the join before trusting the map.
-    missing = spills[~spills.quat_code.isin(sheds.WATERSHED_CODE)]
-    missing.to_csv(CHECK, index=False)
-    print(f"{len(sheds)} watersheds in OWB; {len(spills)} with spills; "
-          f"{len(missing)} spill codes not found in OWB ({missing.spills.sum()} spills)")
+    # Two old codes can point to the same current watershed, so add them up.
+    counts = ["spills", "reached_water", "sewage_to_water", "fuel_oil_to_water"]
+    per_shed = spills.dropna(subset=["map_code"]).groupby("map_code")[counts].sum().reset_index()
+    per_shed["pct_reached_water"] = (100 * per_shed.reached_water / per_shed.spills).round(1)
 
-    m = sheds.merge(spills, left_on="WATERSHED_CODE", right_on="quat_code", how="left")
-    m["spills"] = m.spills.fillna(0)
+    m = sheds.merge(per_shed, left_on="WATERSHED_CODE", right_on="map_code", how="left")
+    m[counts] = m[counts].fillna(0).astype(int)
     m["per100km2"] = m.spills / (m.AREA_HECTARE / 10_000)
+    # Border-river watersheds that are mostly water or Quebec/US (e.g. St. Marys
+    # River at Sault Ste. Marie) still count when Ontario reports name them.
+    m["in_ontario"] = m.in_ontario | (m.spills > 0)
+    write_geopackage(m)
     print(m.per100km2.describe())
     m.sort_values("per100km2", ascending=False)[
         ["WATERSHED_CODE", "WATERSHED_NAME", "spills", "per100km2"]].head(10).pipe(print)
@@ -98,8 +191,9 @@ def main() -> None:
     # Codes ending in "00" are not quaternary watersheds: the Great Lakes, their
     # shoreline strips and areas outside Ontario. No report uses these codes
     # (shoreline reports carry older codes such as 02HC-09), so they are shown
-    # hatched rather than as "No reports".
-    other = m.WATERSHED_CODE.str.endswith("00")
+    # hatched rather than as "No reports". So are watersheds mostly outside
+    # Ontario (e.g. Tonawanda Creek, New York, which drains to the Niagara River).
+    other = m.WATERSHED_CODE.str.endswith("00") | ~m.in_ontario
     quat = m[~other]
     for ax in (ax_main, ax_gta):
         m[other].plot(ax=ax, facecolor="white", edgecolor="#dedede", hatch="///", linewidth=0.15)
@@ -152,7 +246,7 @@ def main() -> None:
              "Ontario Watershed Boundaries (quaternary), Ontario Ministry of Natural Resources. "
              "Contains information licensed under the Open Government Licence – Ontario. "
              "Projection: NAD83 / Ontario MNR Lambert. Map: Elias Matar, October 2026.\n"
-             "About 7% of reports list an older watershed code not in the current boundary layer and are not mapped.",
+             "About 9% of reports give no watershed name, or a name not in the current boundary layer, and are not mapped.",
              fontsize=6.5, color="#444")
 
     fig.savefig(FIG, dpi=300, facecolor="white")
