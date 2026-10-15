@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontario spill reports by watershed — Elias Matar</title>
+<link rel="stylesheet" href="leaflet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+  html, body { margin:0; height:100%; background:#F3F4F0; font-family:'IBM Plex Sans', system-ui, sans-serif; color:#17241F; }
+  #map { position:absolute; inset:0; background:#F3F4F0; }
+  .panel { background:rgba(251,251,248,.94); border:1px solid #E0DED1; border-radius:6px;
+           box-shadow:0 4px 16px -8px rgba(23,36,31,.35); padding:10px 12px; font-size:12px; line-height:1.35; }
+  .title h1 { font-size:14px; margin:0 0 2px; font-weight:600; }
+  .title p { margin:0; color:#57635C; }
+  .legend h2 { font-size:12px; margin:0 0 6px; font-weight:600; }
+  .legend div { display:flex; align-items:center; gap:7px; margin:2px 0; }
+  .legend i { width:16px; height:12px; border:1px solid rgba(0,0,0,.18); display:inline-block; flex:none; }
+  .legend .hatch { background:#e4e4e2; }
+  .legend .town { border:0; border-top:1.5px dashed #4d4d4d; height:0; }
+  .tip { font-family:'IBM Plex Sans', system-ui, sans-serif; font-size:12px; line-height:1.4; padding:6px 9px; }
+  .tip b { font-size:13px; }
+  .tip .muted { color:#57635C; }
+  .credits { font-size:10px; color:#57635C; max-width:340px; }
+  @media (max-width:600px) { .legend { display:none; } .legend.open { display:block; } .title p { display:none; } }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="leaflet.js"></script>
+<script src="data.js"></script>
+<script>
+// Spill reports per 100 km2 by quaternary watershed, 2023-2025.
+// Data: Ontario MECP Spills Action Centre reports; Ontario Watershed Boundaries (MNR).
+var CLASSES = [  // colours from the QGIS project
+  [0, 0, '#FFF5F0', 'No reports'],
+  [0, 1, '#FDD6C4', 'Under 1'],
+  [1, 5, '#FCA486', '1 to 5'],
+  [5, 20, '#FB7050', '5 to 20'],
+  [20, 50, '#EA372A', '20 to 50'],
+  [50, 150, '#BA1419', '50 to 150'],
+  [150, Infinity, '#67000D', '150 or more']
+];
+function colour(r) {
+  if (!r) return CLASSES[0][2];
+  for (var i = 1; i < CLASSES.length; i++) if (r <= CLASSES[i][1]) return CLASSES[i][2];
+  return CLASSES[CLASSES.length - 1][2];
+}
+
+var map = L.map('map', { preferCanvas: true, minZoom: 4, maxZoom: 13, zoomSnap: 0.5 })
+  .fitBounds([[41.6, -83.5], [46.5, -74.3]]);  // southern Ontario
+var canvas = L.canvas({ padding: 0.5, tolerance: 3 });
+
+// Basemap sandwich: plain land/water at the bottom, place names above the data.
+var KEY = 'cb1_4kl7_1_8f248e2ef84b296529e545e0';
+var ATTR = '&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+L.tileLayer('https://basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png?key=' + KEY,
+  { attribution: ATTR, maxNativeZoom: 19 }).addTo(map);
+map.createPane('labels');
+map.getPane('labels').style.zIndex = 650;
+map.getPane('labels').style.pointerEvents = 'none';
+L.tileLayer('https://basemaps.cartocdn.com/rastertiles/light_only_labels/{z}/{x}/{y}.png?key=' + KEY,
+  { pane: 'labels', maxNativeZoom: 19 }).addTo(map);
+
+var D = SPILLS_MAP_DATA;
+function fmt(n) { return n.toLocaleString('en-CA'); }
+
+// Shoreline strips: land drained straight into a lake, with no numbered watershed.
+L.geoJSON(D.shoreline, {
+  renderer: canvas,
+  style: { color: '#c8c8c8', weight: 0.5, fillColor: '#d6d6d6', fillOpacity: 0.55 },
+  onEachFeature: function (f, l) {
+    l.bindTooltip('<b>Shoreline area</b><br><span class="muted">Small creeks draining straight into the lake.<br>' +
+      'Reports here use retired watershed codes,<br>so they can’t be placed on the map.</span>',
+      { sticky: true, className: 'tip' });
+  }
+}).addTo(map);
+
+// Watersheds.
+var base = { color: 'rgba(60,60,60,.45)', weight: 0.5, fillOpacity: 0.85 };
+var sheds = L.geoJSON(D.watersheds, {
+  renderer: canvas,
+  style: function (f) { return L.extend({ fillColor: colour(f.properties.r) }, base); },
+  onEachFeature: function (f, l) {
+    var p = f.properties;
+    var html = '<b>' + (p.n || p.c) + '</b> <span class="muted">' + p.c + '</span><br>' +
+      (p.s ? fmt(p.s) + ' spill reports, 2023–2025<br>' +
+             '<b>' + p.r + '</b> per 100 km²<br>' +
+             Math.round(100 * p.w / p.s) + '% reached water'
+           : '<span class="muted">No spill reports, 2023–2025</span>');
+    l.bindTooltip(html, { sticky: true, className: 'tip' });
+    l.on('mouseover', function () { l.setStyle({ color: '#17241F', weight: 2 }); });
+    l.on('mouseout', function () { l.setStyle({ color: base.color, weight: base.weight }); });
+  }
+}).addTo(map);
+
+// Town outlines, only when zoomed in (names come from the basemap labels).
+var towns = L.geoJSON(D.towns, {
+  renderer: canvas, interactive: false,
+  style: { color: '#4d4d4d', weight: 0.9, dashArray: '4 3', fill: false }
+});
+function townsByZoom() { map.getZoom() >= 8 ? towns.addTo(map) : towns.remove(); }
+map.on('zoomend', townsByZoom); townsByZoom();
+
+// Title, legend and credits.
+var title = L.control({ position: 'topright' });
+title.onAdd = function () {
+  var d = L.DomUtil.create('div', 'panel title');
+  d.innerHTML = '<h1>Spill reports per 100 km², 2023–2025</h1>' +
+    '<p>By watershed. Hover a watershed for its numbers. Town outlines appear as you zoom in.</p>';
+  return d;
+};
+title.addTo(map);
+
+var legend = L.control({ position: 'bottomright' });
+legend.onAdd = function () {
+  var d = L.DomUtil.create('div', 'panel legend');
+  var h = '<h2>Reports per 100 km²</h2>';
+  CLASSES.forEach(function (c) { h += '<div><i style="background:' + c[2] + '"></i>' + c[3] + '</div>'; });
+  h += '<div><i class="hatch"></i>Shoreline area (not mapped)</div><div><i class="town"></i>Town boundary</div>';
+  d.innerHTML = h;
+  return d;
+};
+legend.addTo(map);
+
+map.attributionControl.setPrefix(false);
+map.attributionControl.addAttribution(
+  'Data: Ontario MECP <a href="https://data.ontario.ca/dataset/environmental-occurrences-and-spills">Spills Action Centre</a>; ' +
+  'Ontario Watershed Boundaries &amp; municipal boundaries (Ontario GeoHub), Open Government Licence – Ontario. ' +
+  'Map: Elias Matar (QGIS, Leaflet)');
+</script>
+</body>
+</html>
