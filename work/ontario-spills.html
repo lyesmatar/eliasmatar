@@ -53,7 +53,7 @@
             see how fast a spill would travel downstream at normal flow and at storm flow.</p>
           <ul class="tags">
             <li>Python / pandas</li><li>SQL / SQLite</li><li>Data cleaning</li>
-            <li>REST API</li><li>Statistics</li><li>matplotlib</li><li>geopandas / mapping</li>
+            <li>REST API</li><li>Statistics</li><li>matplotlib</li><li>geopandas / mapping</li><li>QGIS</li><li>Leaflet web map</li>
           </ul>
         </div>
 
@@ -86,8 +86,12 @@
 
         <div class="gallery">
           <figure style="grid-column:1/-1">
+            <iframe src="spills-map/index.html" title="Interactive map of spill reports per 100 square kilometres by Ontario watershed, 2023 to 2025" loading="lazy" style="display:block;width:100%;height:min(70vh,560px);border:1px solid var(--line);border-radius:4px;background:var(--surface-sunk)"></iframe>
+            <figcaption>Interactive map: zoom in and hover over a watershed for its numbers. Built in QGIS (styling, simplification) and published with Leaflet. <a href="spills-map/index.html">Open full screen</a>.</figcaption>
+          </figure>
+          <figure style="grid-column:1/-1">
             <img src="../assets/spills-watershed-map.png" alt="Map of southern Ontario watersheds shaded by spill reports per 100 square kilometres, darkest in Toronto, with a Greater Toronto Area close-up showing the Don, Humber, Etobicoke and Rouge watersheds above 150 reports per 100 square kilometres">
-            <figcaption>Spill reports per 100&nbsp;km&sup2; by quaternary watershed, 2023&ndash;2025, made in Python (geopandas). About 7% of reports list an older watershed code that isn&rsquo;t in the current boundary layer and aren&rsquo;t mapped.</figcaption>
+            <figcaption>Spill reports per 100&nbsp;km&sup2; by quaternary watershed, 2023&ndash;2025, made in Python (geopandas). Reports are matched to watersheds by code and name, because some codes were renumbered. About 9% of reports give no watershed name and aren&rsquo;t mapped.</figcaption>
           </figure>
         </div>
 
