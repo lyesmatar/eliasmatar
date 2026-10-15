@@ -13,16 +13,22 @@ Output: output/figures/spills_watershed_map.png
         output/spills_watersheds_v2.gpkg  (joined layer for QGIS)
 """
 
+import io
 import json
+import math
 import re
 import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
 
 import geopandas as gpd
+import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import requests
+from PIL import Image
+from pyproj import Transformer
 from matplotlib.colors import BoundaryNorm, ListedColormap
 from matplotlib.patches import Patch, Rectangle
 from matplotlib_scalebar.scalebar import ScaleBar
@@ -35,7 +41,8 @@ FIG = ROOT / "output" / "figures" / "spills_watershed_map.png"
 CHECK = ROOT / "output" / "tables" / "watershed_map_join_check.csv"
 GPKG = ROOT / "output" / "spills_watersheds_v2.gpkg"
 PROVINCE = ROOT / "data" / "external" / "ontario_boundary.geojson"
-MUNIS = ROOT / "data" / "external" / "municipal_boundaries.gpkg"  # LIO_Open03/MapServer/14PROVINCE_URL = ("https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/"
+MUNIS = ROOT / "data" / "external" / "municipal_boundaries.gpkg"  # LIO_Open03/MapServer/14
+PROVINCE_URL = ("https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/"
                 "LIO_OPEN_DATA/LIO_Open03/MapServer/0/query")
 
 OWB_URL = ("https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/"
@@ -50,6 +57,51 @@ LABELS = ["No reports", "Under 1", "1 to 5", "5 to 20", "20 to 50", "50 to 150",
 COLORS = ["#f2f2f0", "#fee5d9", "#fcbba1", "#fc9272", "#fb6a4a", "#de2d26", "#67000d"]
 
 LABEL_NUDGE = {"02HC-02": (-9_000, 3_000), "02HC-06": (4_000, -6_000)}  # metres
+
+# The map is drawn in Web Mercator (EPSG:3857) so a tiled basemap fits under it.
+# Rates were calculated from the official AREA_HECTARE field, so the projection
+# only affects the drawing, not the numbers.
+WEB = 3857
+BASEMAP_URL = ("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/"
+               "World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}")  # no key needed
+BASEMAP_ATTR = "Basemap: Esri, HERE, Garmin, © OpenStreetMap contributors"
+MAIN_CITIES = ["TORONTO", "OTTAWA", "HAMILTON", "LONDON", "WINDSOR", "KITCHENER", "BARRIE", "KINGSTON",
+               "SUDBURY", "SAULT STE. MARIE", "PETERBOROUGH", "SARNIA", "NIAGARA FALLS",
+               "BELLEVILLE", "NORTH BAY", "OWEN SOUND", "CORNWALL"]
+# In the close-up the busiest watersheds get labelled boxes, so the cities under
+# them (Toronto, Vaughan, Markham, Richmond Hill) are left out to avoid overlaps.
+GTA_CITIES = ["MISSISSAUGA", "OAKVILLE", "BURLINGTON", "HAMILTON", "PICKERING", "MILTON", "NEWMARKET"]
+
+
+def basemap(ax, bbox, zoom: int) -> None:
+    """Draw Web Mercator basemap tiles covering bbox (x0, y0, x1, y1 in EPSG:3857)."""
+    r = 6378137 * math.pi
+    size = 2 * r / 2 ** zoom
+    tx0, tx1 = int((bbox[0] + r) // size), int((bbox[2] + r) // size)
+    ty0, ty1 = int((r - bbox[3]) // size), int((r - bbox[1]) // size)
+    mosaic = Image.new("RGB", (256 * (tx1 - tx0 + 1), 256 * (ty1 - ty0 + 1)), "white")
+    with requests.Session() as s:
+        for tx in range(tx0, tx1 + 1):
+            for ty in range(ty0, ty1 + 1):
+                resp = s.get(BASEMAP_URL.format(z=zoom, x=tx, y=ty), timeout=60)
+                if resp.ok:
+                    mosaic.paste(Image.open(io.BytesIO(resp.content)).convert("RGB"),
+                                 (256 * (tx - tx0), 256 * (ty - ty0)))
+    extent = (tx0 * size - r, (tx1 + 1) * size - r, r - (ty1 + 1) * size, r - ty0 * size)
+    # Blended toward white so the lakes stay light and the colours stay the focus.
+    ax.imshow(np.asarray(mosaic), extent=extent, interpolation="bilinear", zorder=0, alpha=0.55)
+
+
+def city_labels(ax, munis: gpd.GeoDataFrame, names, size: float) -> None:
+    """Place names at the centre of each municipality's land area (from the municipal boundaries)."""
+    halo = [pe.withStroke(linewidth=2, foreground="white")]
+    for name in names:
+        hit = munis[munis.MUNICIPAL_NAME_SHORTFORM == name]
+        if hit.empty:
+            continue
+        p = hit.geometry.buffer(0).union_all().representative_point()
+        ax.text(p.x, p.y, name.title(), fontsize=size, ha="center", va="center",
+                color="#333", path_effects=halo, zorder=5, clip_on=True)
 GTA_BOX = (1_318_000, 11_855_000, 1_408_000, 11_945_000)  # Hamilton to Pickering, Lake Ontario to Oak Ridges
 
 
@@ -124,7 +176,7 @@ def match_codes(spills: pd.DataFrame, sheds: gpd.GeoDataFrame) -> pd.DataFrame:
     return spills
 
 
-def write_geopackage(m: gpd.GeoDataFrame) -> None:
+def write_geopackage(m: gpd.GeoDataFrame):
     """The joined layer, for styling in QGIS."""
     out = m.rename(columns={"WATERSHED_CODE": "code", "WATERSHED_NAME": "name"})
     out["area_km2"] = (out.AREA_HECTARE / 100).round(1)
@@ -151,6 +203,7 @@ def write_geopackage(m: gpd.GeoDataFrame) -> None:
     shore = shore[shore.area > 1e6]
     shore.to_file(GPKG, layer="shoreline_not_mapped", driver="GPKG")
     print(f"Saved {GPKG.relative_to(ROOT)}")
+    return shore, munis[munis.MUNICIPAL_AREA_EXTENT_TYPE != "Water"]
 
 
 def main() -> None:
@@ -177,39 +230,49 @@ def main() -> None:
     # Border-river watersheds that are mostly water or Quebec/US (e.g. St. Marys
     # River at Sault Ste. Marie) still count when Ontario reports name them.
     m["in_ontario"] = m.in_ontario | (m.spills > 0)
-    write_geopackage(m)
+    shore, munis = write_geopackage(m)
     print(m.per100km2.describe())
     m.sort_values("per100km2", ascending=False)[
         ["WATERSHED_CODE", "WATERSHED_NAME", "spills", "per100km2"]].head(10).pipe(print)
 
+    # Draw in Web Mercator so the basemap tiles fit; see WEB above.
+    m, shore, munis = m.to_crs(WEB), shore.to_crs(WEB), munis.to_crs(WEB)
+    to_web = Transformer.from_crs(CRS, WEB, always_xy=True)
+    gx0, gy0, gx1, gy1 = GTA_BOX
+    xs, ys = to_web.transform([gx0, gx1, gx0, gx1], [gy0, gy0, gy1, gy1])
+    x0, y0, x1, y1 = min(xs), min(ys), max(xs), max(ys)
+    stretch = (x1 - x0) / (gx1 - gx0)  # Mercator inflates distances here by ~1.4
     cmap, norm = ListedColormap(COLORS), BoundaryNorm(BREAKS, len(COLORS))
 
     fig = plt.figure(figsize=(13, 8.2), dpi=300)
     ax_main = fig.add_axes([0.02, 0.10, 0.60, 0.80])
     ax_gta = fig.add_axes([0.63, 0.30, 0.35, 0.60])
 
-    # Codes ending in "00" are not quaternary watersheds: the Great Lakes, their
-    # shoreline strips and areas outside Ontario. No report uses these codes
-    # (shoreline reports carry older codes such as 02HC-09), so they are shown
-    # hatched rather than as "No reports". So are watersheds mostly outside
-    # Ontario (e.g. Tonawanda Creek, New York, which drains to the Niagara River).
-    other = m.WATERSHED_CODE.str.endswith("00") | ~m.in_ontario
-    quat = m[~other]
+    # Only Ontario's quaternary watersheds are coloured. Lakes and the areas
+    # across the border simply show the basemap, and the shoreline strips (land
+    # with no watershed code, so no report can be placed there) are hatched.
+    quat = m[~m.WATERSHED_CODE.str.endswith("00") & m.in_ontario]
+    south = quat[quat.geometry.centroid.y < 5_980_000]  # roughly south of 47°N
+    sx0, sy0, sx1, sy1 = south.total_bounds
+    main_box = (sx0 - 20_000, sy0 - 20_000, sx1 + 20_000, sy1 + 20_000)
+    basemap(ax_main, main_box, zoom=8)
+    basemap(ax_gta, (x0, y0, x1, y1), zoom=10)
     for ax in (ax_main, ax_gta):
-        m[other].plot(ax=ax, facecolor="white", edgecolor="#dedede", hatch="///", linewidth=0.15)
+        shore.plot(ax=ax, facecolor="#e4e4e2", edgecolor="#b8b8b8", hatch="///", linewidth=0.1, alpha=0.9, zorder=2)
         quat.plot(column="per100km2", cmap=cmap, norm=norm, ax=ax,
-                  edgecolor="#9a9a9a", linewidth=0.15)
+                  edgecolor="#8a8a8a", linewidth=0.15, alpha=0.9, zorder=3)
         ax.set_axis_off()
-    sx0, sy0, sx1, sy1 = quat.cx[:, :12_250_000].total_bounds  # southern Ontario
-    ax_main.set_xlim(sx0 - 10_000, sx1 + 10_000)
-    ax_main.set_ylim(sy0 - 10_000, sy1 + 10_000)
-
-    x0, y0, x1, y1 = GTA_BOX
+    ax_main.set_xlim(main_box[0], main_box[2])
+    ax_main.set_ylim(main_box[1], main_box[3])
     ax_gta.set_xlim(x0, x1)
     ax_gta.set_ylim(y0, y1)
-    ax_main.add_patch(Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=1, ec="black"))
-    for ax in (ax_main, ax_gta):
-        ax.add_artist(ScaleBar(1, units="m", location="lower right", box_alpha=0.7, font_properties={"size": 7}))
+    city_labels(ax_main, munis, MAIN_CITIES, 6)
+    city_labels(ax_gta, munis, GTA_CITIES, 6.5)
+    ax_main.add_patch(Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=1, ec="black", zorder=6))
+    for ax, lat in ((ax_main, 44.5), (ax_gta, 43.8)):
+        # Mercator metres are not true metres; scale the bar by cos(latitude).
+        ax.add_artist(ScaleBar(math.cos(math.radians(lat)), units="m", location="lower right",
+                               box_alpha=0.7, font_properties={"size": 7}))
     for side in ["top", "bottom", "left", "right"]:
         ax_gta.spines[side].set_visible(True)
     ax_gta.set_axis_on()
@@ -223,11 +286,11 @@ def main() -> None:
     for _, row in gta.nlargest(5, "spills").iterrows():
         p = row.geometry.intersection(box(x0, y0, x1, y1)).representative_point()
         dx, dy = LABEL_NUDGE.get(row.WATERSHED_CODE, (0, 0))  # keep labels apart
-        p = type(p)(p.x + dx, p.y + dy)
+        p = type(p)(p.x + dx * stretch, p.y + dy * stretch)
         if x0 < p.x < x1 and y0 < p.y < y1:
             ax_gta.annotate(f"{row.WATERSHED_NAME}\n{int(row.spills)} reports", (p.x, p.y),
-                            fontsize=6, ha="center", va="center",
-                            bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.75))
+                            fontsize=6, ha="center", va="center", zorder=7,
+                            bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.8))
     ax_gta.set_title("Greater Toronto Area", fontsize=10, loc="left")
 
     ax_main.annotate("N", xy=(0.04, 0.93), xytext=(0.04, 0.85), xycoords="axes fraction",
@@ -235,7 +298,7 @@ def main() -> None:
                      arrowprops=dict(arrowstyle="-|>", color="black", lw=1.2))
 
     fig.legend(handles=[Patch(fc=c, ec="#9a9a9a", label=l) for c, l in zip(COLORS, LABELS)]
-               + [Patch(fc="white", ec="#c8c8c8", hatch="///", label="Lake, shoreline or\noutside Ontario")],
+               + [Patch(fc="#e4e4e2", ec="#b8b8b8", hatch="///", label="Shoreline area (no\nwatershed code in data)")],
                title="Spill reports per 100 km²", loc="lower left",
                bbox_to_anchor=(0.64, 0.10), ncol=2, fontsize=8, title_fontsize=9, frameon=False)
     fig.suptitle("Spill reports per 100 km² by watershed, southern Ontario, 2023–2025",
@@ -245,7 +308,7 @@ def main() -> None:
              "(2023–2025), counted by the quaternary watershed in each report;\n"
              "Ontario Watershed Boundaries (quaternary), Ontario Ministry of Natural Resources. "
              "Contains information licensed under the Open Government Licence – Ontario. "
-             "Projection: NAD83 / Ontario MNR Lambert. Map: Elias Matar, October 2026.\n"
+             f"{BASEMAP_ATTR}. Map: Elias Matar, October 2026.\n"
              "About 9% of reports give no watershed name, or a name not in the current boundary layer, and are not mapped.",
              fontsize=6.5, color="#444")
 
