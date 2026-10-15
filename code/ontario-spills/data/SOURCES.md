@@ -58,11 +58,34 @@ https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Ope
 Outlines are simplified to 100 m for drawing; rates use the official `AREA_HECTARE` field.
 
 The separate quaternary layer (MapServer/1) leaves out the Lake Ontario shoreline strips, so the
-"All Watershed Units" layer is used and dissolved to quaternary codes. About 7% of 2023–2025
-reports (1,374) list a quaternary code that is not in the current boundary layer (e.g. 02HC-09)
-and are not mapped; they are listed in `tables/watershed_map_join_check.csv`.
+"All Watershed Units" layer is used and dissolved to quaternary codes.
+
+The Province renumbered some watersheds between versions of the layer (e.g. reports say "Mad River"
+under 02ED-09, which is now the Boyne River), so reports are matched on code **and** name. Where only
+the code changed, the name is used (9 codes, 356 reports). About 9% of 2023–2025 reports (1,778) give
+no watershed name, or a name not in the current layer, and are not mapped. Every code and how it was
+matched is listed in `tables/watershed_map_join_check.csv`.
+
+Watersheds mostly outside Ontario (e.g. Tonawanda Creek, New York) are marked using:
+**Ontario Ministry of Natural Resources. (2026).** *Province* [boundary data set]. Land Information
+Ontario. https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/0
 
 *Contains information licensed under the Open Government Licence – Ontario.*
+
+## 5. Municipal boundaries (for the map)
+
+**Ontario Ministry of Municipal Affairs and Housing / Land Information Ontario. (2026).**
+*Municipal Boundary – Lower and Single Tier* [Data set]. Open Government Licence – Ontario.
+https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/14
+(downloaded 2026-10-14). Used for town outlines on the web map and to keep the
+"shoreline" hatching on land.
+
+Basemap: © CARTO, © OpenStreetMap contributors.
+
+**Interactive web map** (`work/spills-map/`): styled and simplified in QGIS, published with Leaflet.
+`src/make_web_map_data.py` re-downloads the watershed boundaries at full detail and simplifies
+them with `shapely.coverage_simplify`, so neighbouring watersheds keep shared borders (no slivers).
+Coordinates are rounded to 4 decimals (about 10 m).
 
 ## Method reference
 
