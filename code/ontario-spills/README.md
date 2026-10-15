@@ -50,6 +50,11 @@ were contained. The next step is to estimate it: use Water Survey of Canada flow
 (e.g. Etobicoke Creek) to estimate how quickly a spill would travel downstream at normal flow vs
 storm flow. That answers the response question directly: *how much time is there to contain it?*
 
+Beyond that is the path question: how a spill on a road gets from the curb to Lake Ontario, through
+which ditches and storm sewers, and where barriers would catch it first. Mapped reports show where a
+growing city needs to be ready for that. This project is a first step toward it, and it depends on
+spills being reported.
+
 Run everything: `pip install -r requirements.txt`, then `python run_all.py`.
 
 ## Limitations
