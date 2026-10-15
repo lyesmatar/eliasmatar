@@ -16,7 +16,7 @@
   .legend h2 { font-size:12px; margin:0 0 6px; font-weight:600; }
   .legend div { display:flex; align-items:center; gap:7px; margin:2px 0; }
   .legend i { width:16px; height:12px; border:1px solid rgba(0,0,0,.18); display:inline-block; flex:none; }
-  .legend .hatch { background:#e4e4e2; }
+  .legend .hatch { background:#c9c9c7; border:1px dashed #9a9a9a; }
   .legend .town { border:0; border-top:1.5px dashed #4d4d4d; height:0; }
   .tip { font-family:'IBM Plex Sans', system-ui, sans-serif; font-size:12px; line-height:1.4; padding:6px 9px; }
   .tip b { font-size:13px; }
@@ -76,13 +76,15 @@ L.tileLayer('https://basemaps.cartocdn.com/rastertiles/light_only_labels/{z}/{x}
 var D = SPILLS_MAP_DATA;
 function fmt(n) { return n.toLocaleString('en-CA'); }
 
-// Shoreline strips: land drained straight into a lake, with no numbered watershed.
+// Shoreline strips: land drained straight into a lake. The Province gives them
+// no quaternary code, so no spill report can be placed in them.
 L.geoJSON(D.shoreline, {
   renderer: canvas,
-  style: { color: '#c8c8c8', weight: 0.5, fillColor: '#d6d6d6', fillOpacity: 0.55 },
+  style: { color: '#9a9a9a', weight: 0.8, dashArray: '3 3', fillColor: '#c9c9c7', fillOpacity: 0.7 },
   onEachFeature: function (f, l) {
-    l.bindTooltip('<b>Shoreline area</b><br><span class="muted">Small creeks draining straight into the lake.<br>' +
-      'Reports here use retired watershed codes,<br>so they can’t be placed on the map.</span>',
+    l.bindTooltip('<b>' + (f.properties.n || 'Shoreline area') + '</b> <span class="muted">shoreline area</span><br>' +
+      '<span class="muted">Drains straight into the lake. The spill data has no<br>' +
+      'watershed code for this area, so reports can’t be placed here.</span>',
       { sticky: true, className: 'tip' });
   }
 }).addTo(map);
@@ -129,7 +131,7 @@ legend.onAdd = function () {
   var d = L.DomUtil.create('div', 'panel legend');
   var h = '<h2>Reports per 100 km²</h2>';
   CLASSES.forEach(function (c) { h += '<div><i style="background:' + c[2] + '"></i>' + c[3] + '</div>'; });
-  h += '<div><i class="hatch"></i>Shoreline area (not mapped)</div><div><i class="town"></i>Town boundary</div>';
+  h += '<div><i class="hatch"></i>Shoreline area (no watershed code in the data)</div><div><i class="town"></i>Town boundary</div>';
   d.innerHTML = h;
   return d;
 };
