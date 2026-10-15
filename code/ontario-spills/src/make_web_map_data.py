@@ -26,6 +26,7 @@ import shapely
 
 ROOT = Path(__file__).resolve().parent.parent
 FULL = ROOT / "data" / "external" / "owb_main_units_full.geojson"
+SHORE = ROOT / "data" / "external" / "owb_shoreline_units.geojson"  # "-00" units with 5th-level names
 JOINED = ROOT / "output" / "spills_watersheds_v2.gpkg"   # spill counts per watershed (make_map.py)
 WEB = ROOT / "output" / "web_layers.gpkg"                 # town layer simplified in QGIS
 MUNIS = ROOT / "data" / "external" / "municipal_boundaries.gpkg"
@@ -62,6 +63,27 @@ def download_full() -> None:
             break
         offset += page
     FULL.write_text(json.dumps({"type": "FeatureCollection", "features": features}))
+
+
+def download_shoreline() -> None:
+    """The shoreline strips (quaternary code ending "-00") with their fifth-level
+    names, e.g. 029A-0006 "Highland Creek". No spill report carries these codes,
+    but naming the strips makes clear they are real land, not holes in the map."""
+    features, offset, page = [], 0, 25
+    while True:
+        r = requests.get(OWB_URL, params={
+            "where": "QUATERNARY_WATERSHED_CODE LIKE '%-00'",
+            "outFields": "QUATERNARY_WATERSHED_CODE,FIFTH_LEVEL_WATERSHED_CODE,FIFTH_LEVEL_WATERSHED_NAME",
+            "outSR": CRS, "geometryPrecision": 1, "orderByFields": "OBJECTID",
+            "resultOffset": offset, "resultRecordCount": page, "f": "geojson"}, timeout=600)
+        r.raise_for_status()
+        batch = r.json()["features"]
+        features += batch
+        print(f"  downloaded {len(features)} shoreline units")
+        if len(batch) < page:
+            break
+        offset += page
+    SHORE.write_text(json.dumps({"type": "FeatureCollection", "features": features}))
 
 
 def fill_small_holes(geom):
@@ -109,10 +131,16 @@ def main() -> None:
 
     munis = gpd.read_file(MUNIS).to_crs(CRS)
     land = munis[munis.MUNICIPAL_AREA_EXTENT_TYPE != "Water"].simplify(100).buffer(0).union_all()
-    shore = sheds[sheds.code.str.endswith("-00")][["code", "geometry"]].copy()
-    shore["geometry"] = shore.intersection(land)
+    if not SHORE.exists():
+        print("Downloading shoreline units with names...")
+        download_shoreline()
+    shore = gpd.read_file(SHORE).set_crs(CRS, allow_override=True)
+    shore = shore.dissolve("FIFTH_LEVEL_WATERSHED_CODE", aggfunc={"FIFTH_LEVEL_WATERSHED_NAME": "first"}).reset_index()
+    shore = shore.rename(columns={"FIFTH_LEVEL_WATERSHED_CODE": "code", "FIFTH_LEVEL_WATERSHED_NAME": "name"})
+    shore["geometry"] = shore.intersection(land).simplify(TOLERANCE)
     shore = shore.explode(index_parts=False)
     shore = shore[(shore.geom_type == "Polygon") & (shore.area > 1e6)]
+    shore = shore.dissolve("code", aggfunc={"name": "first"}).reset_index()
 
     towns = gpd.read_file(WEB, layer="Municipal Boundaries")
     towns = towns[towns.MUNICIPAL_AREA_EXTENT_TYPE != "Water"]
@@ -122,7 +150,7 @@ def main() -> None:
         "watersheds": collection(water, {"n": "name", "c": "code", "s": "spills", "r": "per100km2",
                                          "w": "reached_water"}),
         "towns": collection(towns, {"t": "town"}),
-        "shoreline": collection(shore, {"c": "code"}),
+        "shoreline": collection(shore, {"n": "name", "c": "code"}),
     }
     OUT.write_text("var SPILLS_MAP_DATA = " + json.dumps(data, separators=(",", ":"), ensure_ascii=False) + ";",
                    encoding="utf-8")
