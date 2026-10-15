@@ -47,8 +47,19 @@ function colour(r) {
   return CLASSES[CLASSES.length - 1][2];
 }
 
-var map = L.map('map', { preferCanvas: true, minZoom: 4, maxZoom: 13, zoomSnap: 0.5 })
-  .fitBounds([[41.6, -83.5], [46.5, -74.3]]);  // southern Ontario
+// When embedded in the project page, the mouse wheel scrolls the page until the
+// map is clicked; on its own page it zooms straight away.
+var EMBEDDED = window.self !== window.top;
+var START = [[41.6, -83.5], [46.5, -74.3]];  // southern Ontario
+var map = L.map('map', { preferCanvas: true, minZoom: 4, maxZoom: 13, zoomSnap: 0.5,
+                         scrollWheelZoom: !EMBEDDED }).fitBounds(START);
+if (EMBEDDED) map.once('click', function () { map.scrollWheelZoom.enable(); });
+// The frame can change size while the page loads; re-fit until the user moves the map.
+var moved = false;
+map.once('dragstart zoomstart', function () { moved = true; });
+function refit() { map.invalidateSize(); if (!moved) map.fitBounds(START, { animate: false }); }
+window.addEventListener('load', refit);
+window.addEventListener('resize', refit);
 var canvas = L.canvas({ padding: 0.5, tolerance: 3 });
 
 // Basemap sandwich: plain land/water at the bottom, place names above the data.
@@ -107,7 +118,8 @@ var title = L.control({ position: 'topright' });
 title.onAdd = function () {
   var d = L.DomUtil.create('div', 'panel title');
   d.innerHTML = '<h1>Spill reports per 100 km², 2023–2025</h1>' +
-    '<p>By watershed. Hover a watershed for its numbers. Town outlines appear as you zoom in.</p>';
+    '<p>By watershed. Hover a watershed for its numbers. Town outlines appear as you zoom in.' +
+    (EMBEDDED ? ' Click the map to zoom with the scroll wheel.' : '') + '</p>';
   return d;
 };
 title.addTo(map);
